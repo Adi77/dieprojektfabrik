@@ -1,0 +1,41 @@
+/* debug viewports of divi gridsystem */
+
+body {
+  &:after {
+    @media only screen and (max-width: 575px) {
+      content: 'Phones < 575px';
+      background-color: red;
+      color: white;
+    }
+    @media only screen and (min-width: 576px) and (max-width: 767px) {
+      content: 'Tablets sm < 768px';
+      background-color: brown;
+      color: white;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      content: 'Tablets lg < 992px';
+      background-color: darkgreen;
+      color: white;
+    }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      content: 'Laptop xl < 1200px';
+      background-color: darkblue;
+      color: white;
+    }
+    @media only screen and (min-width: 1200px) and (max-width: 1400px) {
+      content: 'Desktop xxl < 1400px';
+      background-color: darkslategrey;
+      color: white;
+    }
+    @media only screen and (min-width: 1400px) {
+      content: 'Desktop xxxl > 1400px';
+      background-color: rgb(75, 47, 79);
+      color: white;
+    }
+    position: fixed;
+    padding: 5px 10px;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+  }
+}

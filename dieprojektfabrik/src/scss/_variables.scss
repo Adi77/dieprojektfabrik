@@ -1,0 +1,16 @@
+/* container max widths */
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1141px,
+);
+
+/* Theme colors */
+$main-color: #536657;
+$main-color-light: #7b9a62;
+
+/* main-navigation */
+$navbar-dark-color: rgba(white, 1);
+$navbar-light-color: $main-color;

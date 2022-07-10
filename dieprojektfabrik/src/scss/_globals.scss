@@ -1,0 +1,70 @@
+/* Global styles */
+
+body {
+  background-color: white;
+  margin: 0;
+}
+
+/* a-tag href content */
+
+a {
+  color: $main-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $main-color;
+
+    border-bottom: 1px solid $main-color;
+  }
+}
+
+/* form input */
+
+/* text formatting */
+
+/* headings  */
+
+h1,
+h2 {
+  color: $main-color;
+  font-size: toRem(50);
+  @include media($until: 'sm') {
+    font-size: toRem(35);
+  }
+  font-weight: 700;
+}
+h1 {
+  margin-bottom: toRem(40);
+}
+h2 {
+  margin-top: toRem(40);
+  margin-bottom: toRem(30);
+}
+h3 {
+  color: $main-color-light;
+  margin-bottom: toRem(30);
+}
+h4 {
+  font-size: 1.75rem;
+  color: $main-color;
+}
+
+/* Zitat */
+blockquote {
+  p {
+    font-size: toRem(30);
+    @include media($until: 'sm') {
+      font-size: toRem(25);
+    }
+    color: $main-color-light;
+    margin-bottom: toRem(40);
+  }
+}
+
+/* paragraph */
+
+p {
+  font-size: toRem(20);
+  color: $main-color;
+  margin-bottom: toRem(20);
+}
