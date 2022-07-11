@@ -37,11 +37,21 @@
 }
 
 header {
-  //mix-blend-mode: difference;
   position: fixed;
-  top: 4%;
-  left: 3%;
-  //right: 0;
+  width: 100%;
+  height: toRem(200);
   z-index: 100;
   background-color: transparent;
+
+  .navbar-brand {
+    width: toRem(130);
+
+    display: inline-block;
+  }
 }
+
+/* .image-header {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+} */

@@ -104,6 +104,57 @@ class StarterSite extends Timber\Site
     /** This is where you can register custom post types. */
     public function register_post_types()
     {
+        $labels = array(
+            'name'                  => _x('Cases', 'Post Type General Name', 'text_domain'),
+            'singular_name'         => _x('Case', 'Post Type Singular Name', 'text_domain'),
+            'menu_name'             => __('Cases', 'text_domain'),
+            'name_admin_bar'        => __('Case', 'text_domain'),
+            'archives'              => __('Case Archiv', 'text_domain'),
+            'attributes'            => __('Case Attribute', 'text_domain'),
+            'parent_item_colon'     => __('Parent Case:', 'text_domain'),
+            'all_items'             => __('Alle Cases', 'text_domain'),
+            'add_new_item'          => __('Neuer Case hinzufügen', 'text_domain'),
+            'add_new'               => __('Neuer Case', 'text_domain'),
+            'new_item'              => __('Neues Element', 'text_domain'),
+            'edit_item'             => __('Case bearbeiten', 'text_domain'),
+            'update_item'           => __('Case aktualisieren', 'text_domain'),
+            'view_item'             => __('Case anzeigen', 'text_domain'),
+            'view_items'            => __('Elemente anzeigen', 'text_domain'),
+            'search_items'          => __('Cases suchen', 'text_domain'),
+            'not_found'             => __('Kein Case gefunden', 'text_domain'),
+            'not_found_in_trash'    => __('Kein Case gefunden im Papierkorb', 'text_domain'),
+            'featured_image'        => __('Featured Image', 'text_domain'),
+            'set_featured_image'    => __('Set featured image', 'text_domain'),
+            'remove_featured_image' => __('Entferne featured image', 'text_domain'),
+            'use_featured_image'    => __('Use as featured image', 'text_domain'),
+            'insert_into_item'      => __('Insert into item', 'text_domain'),
+            'uploaded_to_this_item' => __('Uploaded to this item', 'text_domain'),
+            'items_list'            => __('Items list', 'text_domain'),
+            'items_list_navigation' => __('Items list navigation', 'text_domain'),
+            'filter_items_list'     => __('Filter items list', 'text_domain'),
+        );
+        $args = array(
+            'label'                 => __('Case', 'text_domain'),
+            'description'           => __('Case information.', 'text_domain'),
+            'labels'                => $labels,
+            'supports'              => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions', 'custom-fields' ),
+            'taxonomies'            => array( 'category', 'post_tag', 'location', 'type' ),
+            'hierarchical'          => false,
+            'public'                => true,
+            'show_ui'               => true,
+            'show_in_menu'          => true,
+            'menu_position'         => 5,
+            'menu_icon'             => 'dashicons-analytics',
+            'show_in_admin_bar'     => true,
+            'show_in_nav_menus'     => true,
+            'can_export'            => true,
+            'has_archive'           => true,
+            'exclude_from_search'   => false,
+            'publicly_queryable'    => true,
+            'capability_type'       => 'page',
+            'show_in_rest'          => true,
+        );
+        register_post_type('case', $args);
     }
     /** This is where you can register custom taxonomies. */
     public function register_taxonomies()
@@ -177,6 +228,9 @@ class StarterSite extends Timber\Site
         );
 
         add_theme_support('menus');
+        /* Enable ci/cd styles in Backend */
+        add_theme_support('editor-styles');
+        add_editor_style('dist/site.css');
     }
 
     /** This Would return 'foo bar!'.
@@ -203,3 +257,13 @@ class StarterSite extends Timber\Site
 }
 
 new StarterSite();
+
+
+
+
+// Remove Block vorlagen
+function fire_theme_support()
+{
+    remove_theme_support('core-block-patterns');
+}
+add_action('after_setup_theme', 'fire_theme_support');

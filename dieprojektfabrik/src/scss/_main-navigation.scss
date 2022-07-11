@@ -1,18 +1,33 @@
+.navbar {
+  &.fixed-top {
+    .navbar-brand {
+      margin: 20px 0 0 35px;
+    }
+    .navbar-toggler {
+      padding: 20px;
+      font-size: 20px;
+      line-height: 1;
+      color: white;
+      border: 0;
+      &:focus {
+        box-shadow: none;
+      }
+      .navbar-toggler-icon {
+        transition: all 0.3s ease;
+        background-image: escape-svg($navbar-dark-toggler-icon-bg);
+      }
+      &[aria-expanded='true'] {
+        color: $main-color;
+        .navbar-toggler-icon {
+          transition: all 0.3s ease;
+          background-image: escape-svg($navbar-dark-toggler-icon-bg-open);
+        }
+      }
+    }
+  }
+}
+
 .navbar-collapse {
-  position: fixed;
-  top: 20%;
-  left: 0;
-  padding: 2.5rem;
-  background-color: rgba(255, 255, 255, 0.9);
-  &.collapsing {
-    left: -35%;
-    transition: width 0s ease-in-out;
-    height: auto;
-  }
-  &.show {
-    left: 4%;
-    transition: left 300ms ease-in-out;
-  }
   .navbar-nav {
     .nav-item {
       .nav-link {
@@ -31,32 +46,6 @@
           -webkit-text-stroke-width: 1px;
           -webkit-text-stroke-color: black;
         }
-      }
-    }
-  }
-}
-.navbar-dark {
-  .navbar-toggler {
-    padding: 20px;
-    font-size: 20px;
-    line-height: 1;
-    background-color: $main-color;
-    color: white;
-    border-color: white;
-    border: 0;
-    border-radius: 100%;
-    transition: box-shadow 0.15s ease-in-out;
-    &.collapsed ~ .navbar-collapse {
-      transition: left 500ms ease-in-out;
-    }
-    &:focus {
-      box-shadow: none;
-    }
-    &[aria-expanded='true'] {
-      color: $main-color;
-      background-color: white;
-      .navbar-toggler-icon {
-        background-image: escape-svg($navbar-light-toggler-icon-bg);
       }
     }
   }
