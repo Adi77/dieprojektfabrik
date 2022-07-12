@@ -13,7 +13,7 @@
 				<div class="wrapper">
 					
 					<nav class="navbar navbar-dark fixed-top bg-transparent">
-						<div class="container-fluid">
+	
 							<a class="navbar-brand" href="{{site.url}}" rel="home">
 								<svg preserveAspectRatio="xMidYMid meet" data-bbox="-0.003 -0.008 280.006 262.018" viewBox="0 0 280 262" xmlns="http://www.w3.org/2000/svg" data-type="ugc" role="presentation" aria-hidden="true">
 									<g>
@@ -93,22 +93,32 @@
 									</g>
 								</svg>
 							</a>
-						  <button
-							class="navbar-toggler"
-							type="button"
-							data-bs-toggle="collapse"
-							data-bs-target="#navbarSupportedContent"
-							aria-controls="navbarSupportedContent"
-							aria-expanded="false"
-							aria-label="Toggle navigation"
-						  >
-							<span class="navbar-toggler-icon"></span>
-						  </button>
-						  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-					  
-							{% include "menu.twig" with {'items': menu.get_items} %}
-					  
-						  </div>
+							<div>
+								<a class="navbar-meta" href="/kontakt/">Kontakt</a>
+								<button
+									class="navbar-toggler"
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target="#navbarSupportedContent"
+									aria-controls="navbarSupportedContent"
+									aria-expanded="false"
+									aria-label="Toggle navigation"
+								>
+									<span class="navbar-toggler-icon"></span>
+								</button>
+								
+								<div class="collapse navbar-collapse" id="navbarSupportedContent">
+										<div class="container">
+											<div class="row">
+												<div class="col-md-6">
+													{% include "menu.twig" with {'items': mainmenuLeft.get_items} %}    
+												</div>
+												<div class="col-md-6">
+													{% include "menu.twig" with {'items': mainmenuRight.get_items} %}   
+												</div>
+										</div>
+									</div>
+								</div>
 						</div>
 					  </nav>
 				</div>

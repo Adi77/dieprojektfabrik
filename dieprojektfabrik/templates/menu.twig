@@ -1,11 +1,12 @@
-{% if menu %}
+{% if mainmenuLeft and mainmenuRight %}
 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
   {% for item in items %}
   <li class="nav-item {{ item.classes | join(' ') }}">
     <a class="nav-link" target="{{ item.target }}" href="{{ item.link }}">{{
       item.title
     }}</a>
-    {% include "menu.twig" with {'items': item.children} %}
+    {% if item.children %} {% include "menu.twig" with {'items': item.children}
+    %} {% endif %}
   </li>
   {% endfor %}
 </ul>

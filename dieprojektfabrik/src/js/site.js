@@ -3,12 +3,15 @@ import 'bootstrap';
 import './../scss/style.scss';
 
 $(document).ready(function ($) {
-  /* cssonly carousel for portfolio items */
+  $('.navbar-toggler').on('click', function (e) {
+    $('.navbar-meta').toggle();
+  });
 
-  $.fn.portfolioCarousel();
+  /* cssonly carousel for portfolio items */
+  //$.fn.portfolioCarousel();
 });
 
-$.fn.portfolioCarousel = function () {
+/* $.fn.portfolioCarousel = function () {
   $('.cases-slider .wp-block-post-template').each(function () {
     let portfolioItems = $(this).find('.type-case');
     let portfolioItemsId = [];
@@ -21,4 +24,4 @@ $.fn.portfolioCarousel = function () {
     });
     $(this).find('.wp-block-post-template').append(portfolioItemsId);
   });
-};
+}; */
