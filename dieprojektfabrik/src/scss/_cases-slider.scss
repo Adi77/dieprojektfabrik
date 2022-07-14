@@ -3,11 +3,12 @@
     margin: 0;
     article {
       padding: 0;
+      margin: 0;
     }
   }
   padding: inherit;
   .uagb-post__inner-wrap {
-    height: 86vh;
+    height: 90vh;
     padding: 36vh 20vw 0 11vw;
     .uagb-post__image {
       &::before {
@@ -23,39 +24,71 @@
         }
       }
     }
+    .uagb-post__text {
+      .wp-block-button__link {
+        color: $black;
+        background-color: $yellow;
+        padding: 10px 20px;
+
+        @include dpf-button($black, $yellow, 0, 50);
+
+        //text-transform: uppercase;
+        transition: all 0.5s ease;
+        // transition: background-position 0.3s ease;
+        background-position: 120% 50%;
+        background-repeat: no-repeat;
+
+        &:hover {
+          background-image: escape-svg($arrow-right-black);
+          background-position: 90% 50%;
+          padding-right: 80px;
+        }
+      }
+    }
   }
   &.uagb-post__arrow-outside {
     &.uagb-post-grid {
       .slick-next,
       .slick-prev {
         top: 80vh;
-        border: 0;
         background-repeat: no-repeat;
-        background-size: toRem(150);
-        width: toRem(50);
-        height: toRem(50);
-        vertical-align: -0.125em;
+        background-size: toRem(116);
+        width: toRem(45);
+        height: toRem(45);
+        border: toRem($border-width) solid white;
+        border-radius: 50%;
         svg {
           display: none;
         }
         &::before {
           content: '';
         }
+        &:hover {
+          margin-top: 0;
+        }
       }
       .slick-next {
-        left: 24vw;
+        left: 23.5vw;
         background-image: escape-svg($carousel-next-btn);
+        &:hover {
+          background-image: escape-svg($carousel-next-fill-btn);
+          border: 0;
+        }
       }
 
       .slick-prev {
         left: 20vw;
         background-image: escape-svg($carousel-prev-btn);
+        &:hover {
+          background-image: escape-svg($carousel-prev-fill-btn);
+          border: 0;
+        }
       }
     }
   }
   &.uagb-post-grid {
     ul.slick-dots {
-      top: 76vh;
+      top: 75.6vh;
       text-align: left;
       display: inline-block;
       left: 9vw;
@@ -65,17 +98,31 @@
         margin-right: toRem(10);
         button {
           &:before {
-            font-size: toRem(50);
-            color: $black;
+            content: '';
+            background-color: transparent;
             opacity: 1;
+            width: toRem(18);
+            height: toRem(18);
+            border: toRem($border-width) solid $white;
+            border-radius: 50%;
+          }
+          &:hover {
+            &:before {
+              content: '';
+              background-color: $white;
+              margin-top: 0;
+              border: 0;
+            }
           }
         }
         &.slick-active {
           button {
             &::before {
-              color: white;
+              content: '';
+              background-color: white;
               opacity: 1;
-              // background-color: white;
+              margin-top: 0;
+              border: 0;
             }
           }
         }

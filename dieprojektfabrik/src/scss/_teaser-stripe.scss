@@ -1,0 +1,35 @@
+.teaser-stripe {
+  cursor: pointer;
+  background-color: $orange;
+  height: toRem(100);
+  p {
+    padding-top: toRem(28);
+    margin-bottom: 0;
+    a {
+      color: $white;
+      text-transform: uppercase;
+      &:after {
+        content: '';
+        position: relative;
+        top: toRem(7);
+        background-image: escape-svg($arrow-right-white);
+        width: toRem(30);
+        height: toRem(30);
+        margin-left: toRem(80);
+        transition: margin-left 0.6s ease;
+        display: inline-block;
+      }
+    }
+  }
+
+  &:hover {
+    a {
+      &:hover {
+        border-bottom: 0;
+      }
+      &:after {
+        margin-left: toRem(20);
+      }
+    }
+  }
+}

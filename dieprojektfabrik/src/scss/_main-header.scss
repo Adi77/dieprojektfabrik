@@ -1,41 +1,3 @@
-.image-header {
-  background-position: top center;
-  background-size: cover;
-  position: relative;
-  opacity: 1;
-  height: 100vh;
-  @include media($until: 'sm') {
-    height: 60vh;
-  }
-  max-width: 100%;
-  width: 100%;
-  margin-bottom: 100px;
-  svg {
-    width: 40vw;
-    margin: auto;
-    display: block;
-    padding-top: 10vh;
-  }
-}
-
-.single-post {
-  .image-header {
-    height: toRem(300);
-    /*     @include media($until: 'sm') {
-      height: 60vh;
-    } */
-    svg {
-      width: toRem(250);
-    }
-  }
-}
-
-.logo-link {
-  a {
-    border: 0;
-  }
-}
-
 header {
   position: fixed;
   width: 100%;
@@ -48,10 +10,7 @@ header {
 
     display: inline-block;
   }
+  .navbar-metanav {
+    @include dpf-button($white, $white, 1, 20);
+  }
 }
-
-/* .image-header {
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-} */

@@ -264,8 +264,11 @@ new StarterSite();
 
 
 // Remove Block vorlagen
+add_action('after_setup_theme', 'fire_theme_support');
 function fire_theme_support()
 {
     remove_theme_support('core-block-patterns');
 }
-add_action('after_setup_theme', 'fire_theme_support');
+
+// Remove UAG Templates Button
+add_filter('ast_block_templates_disable', '__return_true');

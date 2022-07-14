@@ -62,3 +62,61 @@ $breakpoints: (
   $remValue: ($value / 16) + rem;
   @return $remValue;
 }
+
+// Button variants
+//
+// Easily pump out default styles, as well as :hover, :focus, :active,
+// and disabled options for all buttons
+
+@mixin dpf-button($color, $background, $outline, $radius) {
+  color: $color;
+  @if $outline == 1 {
+    background-color: transparent;
+  } @else {
+    background-color: $background;
+  }
+
+  border: toRem($border-width) solid $background;
+  border-radius: toRem($radius);
+
+  &:focus,
+  &.focus,
+  &:hover {
+    color: $black;
+    background-color: $background;
+    border-color: $background;
+  }
+
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: $black;
+    background-color: $background;
+    background-image: none;
+    border-color: $background;
+
+    &:hover,
+    &:focus,
+    &.focus {
+      color: $black;
+      background-color: $background;
+      border-color: $background;
+    }
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &:hover,
+    &:focus,
+    &.focus {
+      color: darkgrey;
+      background-color: $lightgrey;
+      border-color: $lightgrey;
+    }
+  }
+
+  .badge {
+    color: $background;
+    background-color: $color;
+  }
+}

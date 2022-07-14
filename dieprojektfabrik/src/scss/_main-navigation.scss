@@ -18,7 +18,6 @@
         background-image: escape-svg($navbar-dark-toggler-icon-bg);
       }
       &[aria-expanded='true'] {
-        color: $main-color;
         .navbar-toggler-icon {
           transition: all 0.3s ease;
           background-image: escape-svg($navbar-dark-toggler-icon-bg-open);
@@ -58,22 +57,44 @@
   }
 
   .navbar-nav {
+    margin-top: 6vh;
     .nav-item {
       .nav-link {
-        font-size: 1.5rem;
-        color: $main-color;
+        font-size: 7vh;
         border: 0;
         &:hover {
-          -webkit-text-fill-color: black;
+          -webkit-text-fill-color: $orange;
           -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: black;
+          -webkit-text-stroke-color: $orange;
         }
       }
       &.current_page_item {
         .nav-link {
-          -webkit-text-fill-color: black;
+          color: $orange;
+          -webkit-text-fill-color: $orange;
           -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: black;
+          -webkit-text-stroke-color: $orange;
+        }
+      }
+      .navbar-nav {
+        position: relative;
+        display: inline-block;
+        margin-top: 5px;
+        padding-bottom: 20px;
+        .nav-item {
+          margin-right: toRem(20);
+          display: inline-block;
+          .nav-link {
+            font-size: toRem(20);
+            padding: 15px;
+            margin-bottom: 25px;
+            @include dpf-button($white, $white, 1, 50);
+            &:hover {
+              -webkit-text-fill-color: $black;
+              -webkit-text-stroke-width: 1px;
+              -webkit-text-stroke-color: $black;
+            }
+          }
         }
       }
     }
@@ -86,5 +107,12 @@
     width: toRem(600);
     height: toRem(600);
     background-image: escape-svg($nav-bg-icon);
+  }
+  .row {
+    > div:last-child {
+      .navbar-nav {
+        text-align: right;
+      }
+    }
   }
 }
