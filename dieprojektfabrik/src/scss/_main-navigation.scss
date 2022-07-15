@@ -86,7 +86,7 @@
           display: inline-block;
           .nav-link {
             font-size: toRem(20);
-            padding: 15px;
+            padding: toRem(10) toRem(20) toRem(6);
             margin-bottom: 25px;
             @include dpf-button($white, $white, 1, 50);
             &:hover {

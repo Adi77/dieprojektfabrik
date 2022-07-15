@@ -76,6 +76,13 @@ $breakpoints: (
     background-color: $background;
   }
 
+  @if $background == $yellow {
+    transition: all 0.5s ease;
+    // transition: background-position 0.3s ease;
+    background-position: 120% 50%;
+    background-repeat: no-repeat;
+  }
+
   border: toRem($border-width) solid $background;
   border-radius: toRem($radius);
 

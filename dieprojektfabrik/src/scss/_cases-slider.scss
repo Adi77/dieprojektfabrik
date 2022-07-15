@@ -28,15 +28,9 @@
       .wp-block-button__link {
         color: $black;
         background-color: $yellow;
-        padding: 10px 20px;
+        padding: toRem(10) toRem(20) toRem(6);
 
         @include dpf-button($black, $yellow, 0, 50);
-
-        //text-transform: uppercase;
-        transition: all 0.5s ease;
-        // transition: background-position 0.3s ease;
-        background-position: 120% 50%;
-        background-repeat: no-repeat;
 
         &:hover {
           background-image: escape-svg($arrow-right-black);

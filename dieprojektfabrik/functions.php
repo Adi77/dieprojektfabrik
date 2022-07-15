@@ -173,6 +173,10 @@ class StarterSite extends Timber\Site
         //$context['menu']  = new Timber\Menu();
         $context['mainmenuLeft']  = new Timber\Menu('mainmenuLeft');
         $context['mainmenuRight']  = new Timber\Menu('mainmenuRight');
+        $context['footerwidgetcol1'] = Timber::get_widgets('footerwidgetcol1');
+        $context['footerwidgetcol2'] = Timber::get_widgets('footerwidgetcol2');
+        $context['footerwidgetcol3'] = Timber::get_widgets('footerwidgetcol3');
+        $context['footerwidgetcol4'] = Timber::get_widgets('footerwidgetcol4');
         $context['site']  = $this;
         return $context;
     }
@@ -272,3 +276,72 @@ function fire_theme_support()
 
 // Remove UAG Templates Button
 add_filter('ast_block_templates_disable', '__return_true');
+
+
+
+
+/**
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+ */
+function dieprojektfabrik_widgets_init()
+{
+    register_sidebar(
+        array(
+            'name'          => __('Footer 1', 'dieprojektfabrik'),
+            'id'            => 'footerwidgetcol1',
+            'description'   => __('Add widgets here to appear in your footer.', 'dieprojektfabrik'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
+ 
+    register_sidebar(
+        array(
+            'name'          => __('Footer 2', 'dieprojektfabrik'),
+            'id'            => 'footerwidgetcol2',
+            'description'   => __('Add widgets here to appear in your footer.', 'dieprojektfabrik'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name'          => __('Footer 3', 'dieprojektfabrik'),
+            'id'            => 'footerwidgetcol3',
+            'description'   => __('Add widgets here to appear in your footer.', 'dieprojektfabrik'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
+
+    register_sidebar(
+        array(
+            'name'          => __('Footer 4', 'dieprojektfabrik'),
+            'id'            => 'footerwidgetcol4',
+            'description'   => __('Add widgets here to appear in your footer.', 'dieprojektfabrik'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
+}
+add_action('widgets_init', 'dieprojektfabrik_widgets_init');
+
+
+
+
+function phi_theme_support()
+{
+    remove_theme_support('widgets-block-editor');
+}
+    add_action('after_setup_theme', 'phi_theme_support');

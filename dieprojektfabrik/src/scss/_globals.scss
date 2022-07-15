@@ -26,12 +26,15 @@ button {
 /* headings  */
 
 h1,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+}
+
+h1,
 h2 {
   font-size: toRem(50);
-  @include media($until: 'sm') {
-    font-size: toRem(35);
-  }
-  font-weight: 700;
 }
 h1 {
   margin-bottom: toRem(40);
@@ -59,8 +62,23 @@ blockquote {
 }
 
 /* paragraph */
-
 p {
   font-size: toRem(20);
   margin-bottom: toRem(20);
+}
+
+/* forms */
+
+input {
+  color: $black;
+  border: 0;
+  border-radius: toRem(50);
+  padding: toRem(10) toRem(20);
+  &::placeholder {
+    color: $black;
+    opacity: 1;
+  }
+  &[type='submit'] {
+    background-color: $yellow;
+  }
 }

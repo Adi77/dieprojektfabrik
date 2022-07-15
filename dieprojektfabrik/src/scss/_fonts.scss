@@ -1,11 +1,54 @@
-/* @font-face {
-  font-family: 'CabinetGroteskExtrabold';
-  src: url('../fonts/CabinetGrotesk-Extrabold.woff2') format('woff2'),
-    url('../fonts/CabinetGrotesk-Extrabold.woff') format('woff');
-} 
+@font-face {
+  font-family: 'Miso';
+  src: url('../fonts/Miso.woff') format('woff'),
+    url('../fonts/Miso.woff2') format('woff2');
+}
 
-*/
+@font-face {
+  font-family: 'Miso Light';
+  src: url('../fonts/Miso-Light.woff') format('woff'),
+    url('../fonts/Miso-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Miso Bold';
+  src: url('../fonts/Miso-Bold.woff') format('woff'),
+    url('../fonts/Miso-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins Regular';
+  src: url('../fonts/Poppins-Regular.woff') format('woff'),
+    url('../fonts/Poppins-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins Bold';
+  src: url('../fonts/Poppins-Bold.woff') format('woff'),
+    url('../fonts/Poppins-Bold.woff2') format('woff2');
+}
 
 body {
-  font-family: 'Kosugi Maru', sans-serif;
+  font-family: 'Poppins Regular', sans-serif;
+}
+
+strong {
+  font-family: 'Poppins Bold', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Miso Bold', sans-serif;
+  letter-spacing: 1.8px;
+}
+
+button,
+.wp-block-button__link,
+.menu-item,
+input[type='submit'] {
+  font-family: 'Miso Bold', sans-serif;
 }

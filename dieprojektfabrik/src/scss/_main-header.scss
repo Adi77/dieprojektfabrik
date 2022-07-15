@@ -11,6 +11,7 @@ header {
     display: inline-block;
   }
   .navbar-metanav {
+    padding: toRem(8) toRem(18) toRem(4);
     @include dpf-button($white, $white, 1, 20);
   }
 }
