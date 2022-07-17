@@ -180,8 +180,9 @@ body {
                   top: 30px;
                 }
                 &:last-child {
-                  bottom: 0;
                   position: absolute;
+                  top: inherit;
+                  bottom: 0;
                   display: block;
                   color: $white;
                   width: toRem(310);
