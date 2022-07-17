@@ -108,10 +108,14 @@
     height: toRem(600);
     background-image: escape-svg($nav-bg-icon);
   }
-  .row {
-    > div:last-child {
-      .navbar-nav {
-        text-align: right;
+  .container {
+    padding-right: 10vw;
+    padding-left: 10vw;
+    .row {
+      > div:last-child {
+        .navbar-nav {
+          text-align: right;
+        }
       }
     }
   }

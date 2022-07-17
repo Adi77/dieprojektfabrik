@@ -59,7 +59,7 @@ footer {
         margin-bottom: toRem(20);
         a {
           font-size: toRem(16);
-          padding: toRem(10) toRem(20) toRem(6);
+          padding: toRem(10) toRem(16) toRem(6);
           margin-bottom: toRem(25);
           @include dpf-button($black, $black, 1, 50);
           &:hover {

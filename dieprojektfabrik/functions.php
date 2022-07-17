@@ -237,6 +237,45 @@ class StarterSite extends Timber\Site
         /* Enable ci/cd styles in Backend */
         add_theme_support('editor-styles');
         add_editor_style('dist/site.css');
+
+        /* disable standard gutenberg block editor colors */
+        add_theme_support('disable-custom-colors');
+        /* add own theme colors */
+        add_theme_support(
+            'editor-color-palette',
+            array(
+                array(
+                    'name'  => esc_html__('Black', 'dieprojektfabrik'),
+                    'slug'  => 'black',
+                    'color' => '#282828',
+                ),
+                array(
+                    'name'  => esc_html__('White', 'dieprojektfabrik'),
+                    'slug'  => 'white',
+                    'color' => '#fff',
+                ),
+                array(
+                    'name'  => esc_html__('Yellow', 'dieprojektfabrik'),
+                    'slug'  => 'yellow',
+                    'color' => '#f5d934',
+                ),
+                array(
+                    'name'  => esc_html__('Orange', 'dieprojektfabrik'),
+                    'slug'  => 'orange',
+                    'color' => '#ff850b',
+                ),
+                array(
+                    'name'  => esc_html__('Green', 'dieprojektfabrik'),
+                    'slug'  => 'green',
+                    'color' => '#8bd296',
+                ),
+                array(
+                    'name'  => esc_html__('Light grey', 'dieprojektfabrik'),
+                    'slug'  => 'lightgrey',
+                    'color' => '#f4f4f4',
+                ),
+            )
+        );
     }
 
     /** This Would return 'foo bar!'.
@@ -345,3 +384,6 @@ function phi_theme_support()
     remove_theme_support('widgets-block-editor');
 }
     add_action('after_setup_theme', 'phi_theme_support');
+
+    remove_filter('render_block', 'wp_render_layout_support_flag', 10, 2);
+    remove_filter('render_block', 'gutenberg_render_layout_support_flag', 10, 2);

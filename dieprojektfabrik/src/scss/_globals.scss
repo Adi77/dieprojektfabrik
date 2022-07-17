@@ -27,27 +27,34 @@ button {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   text-transform: uppercase;
 }
 
-h1,
-h2 {
-  font-size: toRem(50);
-}
 h1 {
+  font-size: toRem(85);
   margin-bottom: toRem(40);
 }
 h2 {
+  font-size: toRem(66);
   margin-top: toRem(40);
   margin-bottom: toRem(30);
+  &.has-text-color {
+    margin-bottom: 0;
+    + h2 {
+      margin-top: 0;
+    }
+  }
 }
 h3 {
   margin-bottom: toRem(30);
 }
 h4 {
-  font-size: 1.75rem;
+  font-size: toRem(25);
+
+  a {
+    text-transform: none;
+  }
 }
 
 /* Zitat */
@@ -64,7 +71,7 @@ blockquote {
 /* paragraph */
 p {
   font-size: toRem(20);
-  margin-bottom: toRem(20);
+  margin-bottom: toRem(40);
 }
 
 /* forms */
@@ -81,4 +88,19 @@ input {
   &[type='submit'] {
     background-color: $yellow;
   }
+}
+
+/* reset wordpress gutenberg styles */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }

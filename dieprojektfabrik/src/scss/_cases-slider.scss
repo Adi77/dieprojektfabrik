@@ -18,6 +18,7 @@
     }
     .uagb-post__title {
       a {
+        font-size: toRem(85);
         color: $white;
         &:hover {
           border: 0;
@@ -122,5 +123,138 @@
         }
       }
     }
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.cases-carousel-multicol {
+  padding-top: toRem(60);
+  padding-bottom: toRem(60);
+  background-color: $lightgrey;
+  border: solid toRem(40) $white;
+  .uagb-slick-carousel {
+    padding: 0;
+    .uagb-post__items {
+      margin-right: -282px;
+      .slick-list {
+        .slick-track {
+          .slick-slide {
+            height: auto;
+            margin-right: 20px;
+            .uagb-post__inner-wrap {
+              padding: toRem(40);
+              height: toRem(550);
+
+              .uagb-post__image {
+                &::before {
+                  background-color: transparent;
+                  opacity: 1;
+                }
+              }
+              .uagb-post__title {
+                font-family: 'Poppins Bold';
+              }
+              .uagb-post__text {
+                overflow: inherit;
+                .uagb-post__title {
+                  margin-top: toRem(40);
+                  a {
+                    font-size: inherit;
+                    color: $white;
+                    &:hover {
+                      border: 0;
+                    }
+                  }
+                }
+                .uagb-post-grid-byline {
+                  a {
+                    color: $white;
+                    font-size: toRem(16);
+                  }
+                }
+                &:nth-child(4) {
+                  position: absolute;
+                  top: 30px;
+                }
+                &:last-child {
+                  bottom: 0;
+                  position: absolute;
+                  display: block;
+                  color: $white;
+                  width: toRem(310);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.uagb-post__arrow-outside {
+      &.uagb-post-grid {
+        .slick-next,
+        .slick-prev {
+          position: relative;
+          bottom: toRem(-60);
+          border: toRem($border-width) solid $black;
+          &:hover {
+            background-size: toRem(103);
+          }
+        }
+        .slick-next {
+          top: inherit;
+          left: toRem(58);
+          background-image: escape-svg($carousel-next-btn-black);
+          &:hover {
+            background-image: escape-svg($carousel-next-fill-btn-black);
+          }
+        }
+        .slick-prev {
+          position: absolute;
+          top: inherit;
+          left: 0;
+          background-image: escape-svg($carousel-prev-btn-black);
+
+          &:hover {
+            background-image: escape-svg($carousel-prev-fill-btn-black);
+          }
+        }
+      }
+    }
+    &.uagb-post-grid {
+      ul.slick-dots {
+        top: inherit;
+        left: toRem(100);
+        bottom: toRem(1);
+        li {
+          button {
+            &:before {
+              content: '';
+              border: toRem($border-width) solid $black;
+            }
+            &:hover {
+              &:before {
+                content: '';
+                background-color: $black;
+              }
+            }
+          }
+          &.slick-active {
+            button {
+              &::before {
+                content: '';
+                background-color: $black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  + .cases-carousel-multicol {
+    border-top: 0;
   }
 }

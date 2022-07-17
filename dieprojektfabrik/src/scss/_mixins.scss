@@ -68,7 +68,12 @@ $breakpoints: (
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
 
-@mixin dpf-button($color, $background, $outline, $radius) {
+@mixin dpf-button(
+  $color: $white,
+  $background: $black,
+  $outline: 1,
+  $radius: 50
+) {
   color: $color;
   @if $outline == 1 {
     background-color: transparent;
@@ -92,6 +97,12 @@ $breakpoints: (
     color: $black;
     background-color: $background;
     border-color: $background;
+
+    @if $outline == 0 {
+      background-image: escape-svg($arrow-right-black);
+      background-position: 90% 50%;
+      padding-right: 80px;
+    }
   }
 
   &:active,

@@ -1,0 +1,11 @@
+.teaser-2row-width-title {
+  background-color: $lightgrey;
+  border: solid toRem(40) $white;
+  .container {
+    margin: toRem(60) auto;
+  }
+  + .teaser-2row-width-title,
+  + .cases-carousel-multicol {
+    border-top: 0;
+  }
+}

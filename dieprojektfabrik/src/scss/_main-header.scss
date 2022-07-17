@@ -9,6 +9,9 @@ header {
     width: toRem(130);
 
     display: inline-block;
+    &:hover {
+      border: 0;
+    }
   }
   .navbar-metanav {
     padding: toRem(8) toRem(18) toRem(4);

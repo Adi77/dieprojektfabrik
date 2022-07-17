@@ -12,8 +12,8 @@ body.page-editor-page .editor-block-list__block {
   max-width: none !important;
 }
 
-html .wp-block-columns {
-  display: inherit;
+html .wp-block .wp-block-columns {
+  //display: inherit;
   margin-bottom: inherit;
   box-sizing: inherit;
   flex-wrap: inherit !important;
@@ -25,6 +25,40 @@ html .wp-block p {
 }
 
 html .wp-block h2 {
-  margin-top: 100px !important;
   margin-bottom: inherit !important;
+}
+
+/* buttons */
+
+.wp-block-button__link {
+  padding: toRem(14) toRem(20) toRem(10);
+  cursor: pointer;
+  @include dpf-button($black, $yellow, 0);
+}
+
+/* disable default styling */
+
+.content-wrapper {
+  .wp-block-columns {
+    &:not(.is-not-stacked-on-mobile) {
+      > .wp-block-column {
+        flex-basis: inherit;
+        flex-grow: inherit;
+      }
+    }
+  }
+}
+
+/* colors */
+.has-orange-color {
+  color: $orange;
+}
+
+html .wp-block h2 {
+  &.has-text-color {
+    margin-bottom: 0 !important;
+    + h2 {
+      margin-top: 0 !important;
+    }
+  }
 }
