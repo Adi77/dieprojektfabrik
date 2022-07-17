@@ -3,6 +3,15 @@
   border: solid toRem(40) $white;
   .container {
     margin: toRem(60) auto;
+    .wp-block-columns {
+      .wp-block-column {
+        > * {
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
   }
   + .teaser-2row-width-title,
   + .cases-carousel-multicol {
