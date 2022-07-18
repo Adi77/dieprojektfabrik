@@ -1,0 +1,22 @@
+.cta-contact-section {
+  .uagb-section__overlay {
+    width: inherit;
+    background-image: escape-svg($nav-bg-icon);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 93vh;
+  }
+  .container {
+    .wp-block-column {
+      color: $white;
+      text-align: center;
+      .wp-block-button__link {
+        color: $black;
+        background-color: $yellow;
+        &:hover {
+          background-image: escape-svg($arrow-right-black);
+        }
+      }
+    }
+  }
+}

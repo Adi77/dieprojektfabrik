@@ -1,0 +1,18 @@
+.wp-block-uagb-section {
+  border: solid 2.5rem white;
+
+  .uagb-section__overlay {
+    width: 50vw;
+  }
+  .container {
+    margin: toRem(100) auto toRem(60);
+    .wp-block-button__link {
+      @include dpf-button($white, $black, 0, 50);
+    }
+  }
+  + .teaser-2row-width-title,
+  + .cases-carousel-multicol,
+  + .wp-block-uagb-section {
+    border-top: 0;
+  }
+}

@@ -10,6 +10,7 @@
       line-height: 1;
       color: white;
       border: 0;
+      transition: all 0.3s ease;
       &:focus {
         box-shadow: none;
       }
@@ -36,15 +37,12 @@
 .navbar-collapse {
   background-color: black;
   z-index: -1;
-
   position: fixed;
   width: 100%;
   height: 100%;
-
   top: -100%;
   right: -100%;
   bottom: 0;
-
   transition: all 0.3s ease-in-out;
 
   &.show {
@@ -115,6 +113,38 @@
       > div:last-child {
         .navbar-nav {
           text-align: right;
+        }
+      }
+    }
+  }
+}
+
+header {
+  &.shrink {
+    .navbar {
+      background-color: $white;
+      .navbar-brand {
+        width: toRem(60);
+        margin: toRem(10) 0 toRem(10) toRem(60);
+        &.light {
+          transition: all 0.3s ease;
+          svg {
+            path {
+              &[fill='#ffffff'] {
+                fill: $black;
+              }
+            }
+          }
+        }
+      }
+      .navbar-metanav {
+        display: none;
+      }
+      .navbar-toggler {
+        padding-right: toRem(70);
+        .navbar-toggler-icon {
+          transition: all 0.3s ease;
+          background-image: escape-svg($navbar-light-toggler-icon-bg);
         }
       }
     }

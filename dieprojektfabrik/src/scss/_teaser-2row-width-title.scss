@@ -2,7 +2,7 @@
   background-color: $lightgrey;
   border: solid toRem(40) $white;
   .container {
-    margin: toRem(60) auto;
+    margin: toRem(100) auto toRem(60);
     .wp-block-columns {
       .wp-block-column {
         > * {
@@ -14,7 +14,8 @@
     }
   }
   + .teaser-2row-width-title,
-  + .cases-carousel-multicol {
+  + .cases-carousel-multicol,
+  + .wp-block-uagb-section {
     border-top: 0;
   }
 }

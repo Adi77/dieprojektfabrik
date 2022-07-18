@@ -83,7 +83,6 @@ $breakpoints: (
 
   @if $background == $yellow {
     transition: all 0.5s ease;
-    // transition: background-position 0.3s ease;
     background-position: 120% 50%;
     background-repeat: no-repeat;
   }
@@ -95,11 +94,25 @@ $breakpoints: (
   &.focus,
   &:hover {
     color: $black;
+    @if $outline == 1 {
+      color: $black;
+    } @else {
+      @if $background == $yellow {
+        color: $black;
+      } @else {
+        color: $white;
+      }
+    }
     background-color: $background;
     border-color: $background;
 
     @if $outline == 0 {
-      background-image: escape-svg($arrow-right-black);
+      @if $background == $yellow {
+        background-image: escape-svg($arrow-right-black);
+      } @else {
+        background-image: escape-svg($arrow-right-white);
+      }
+
       background-position: 90% 50%;
       padding-right: 80px;
     }

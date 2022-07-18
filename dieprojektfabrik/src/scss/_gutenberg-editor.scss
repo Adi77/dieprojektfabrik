@@ -12,21 +12,21 @@ body.page-editor-page .editor-block-list__block {
   max-width: none !important;
 }
 
-html .wp-block .wp-block-columns {
+html .wp-block .wp-block-column {
   //display: inherit;
-  margin-bottom: inherit;
-  box-sizing: inherit;
+  //margin: inherit !important;
+  box-sizing: inherit !important;
   flex-wrap: inherit !important;
   align-items: inherit !important;
 }
 
-html .wp-block p {
+/* html .wp-block p {
   margin-bottom: 0 !important;
 }
 
 html .wp-block h2 {
   margin-bottom: inherit !important;
-}
+} */
 
 /* buttons */
 

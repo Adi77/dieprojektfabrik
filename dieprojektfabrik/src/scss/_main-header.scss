@@ -6,6 +6,7 @@ header {
   background-color: transparent;
 
   .navbar-brand {
+    transition: all 0.2s ease;
     width: toRem(130);
 
     display: inline-block;
@@ -14,6 +15,7 @@ header {
     }
   }
   .navbar-metanav {
+    display: inline-block;
     padding: toRem(8) toRem(18) toRem(4);
     @include dpf-button($white, $white, 1, 20);
   }
