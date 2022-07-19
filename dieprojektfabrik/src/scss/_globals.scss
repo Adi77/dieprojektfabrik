@@ -1,4 +1,9 @@
 /* Global styles */
+html,
+body {
+  overflow-x: hidden !important;
+  width: 100vw !important;
+}
 
 body {
   background-color: $white;
@@ -33,10 +38,17 @@ h3 {
 
 h1 {
   font-size: toRem(85);
+  @include media($until: 'sm') {
+    font-size: toRem(50);
+    line-height: 1.1;
+  }
   margin-bottom: toRem(40);
 }
 h2 {
   font-size: toRem(66);
+  @include media($until: 'sm') {
+    font-size: toRem(40);
+  }
   margin-top: toRem(40);
   margin-bottom: toRem(30);
   &.has-text-color {

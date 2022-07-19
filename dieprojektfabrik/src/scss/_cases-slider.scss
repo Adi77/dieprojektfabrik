@@ -10,6 +10,9 @@
   .uagb-post__inner-wrap {
     height: 90vh;
     padding: 36vh 20vw 0 11vw;
+    @include media($until: 'sm') {
+      padding-top: toRem(200);
+    }
     .uagb-post__image {
       &::before {
         background-color: transparent;
@@ -18,7 +21,6 @@
     }
     .uagb-post__title {
       a {
-        font-size: toRem(85);
         color: $white;
         &:hover {
           border: 0;
@@ -46,6 +48,13 @@
       .slick-next,
       .slick-prev {
         top: 80vh;
+        @include media($from: 'md', $until: 'xl') {
+          top: 81.2vh;
+        }
+        @include media($until: 'sm') {
+          top: 74vh;
+        }
+        left: 0;
         background-repeat: no-repeat;
         background-size: toRem(116);
         width: toRem(45);
@@ -63,7 +72,7 @@
         }
       }
       .slick-next {
-        left: 23.5vw;
+        margin-left: 14.5vw;
         background-image: escape-svg($carousel-next-btn);
         &:hover {
           background-image: escape-svg($carousel-next-fill-btn);
@@ -72,7 +81,7 @@
       }
 
       .slick-prev {
-        left: 20vw;
+        margin-left: 11vw;
         background-image: escape-svg($carousel-prev-btn);
         &:hover {
           background-image: escape-svg($carousel-prev-fill-btn);
@@ -86,7 +95,13 @@
       top: 75.6vh;
       text-align: left;
       display: inline-block;
-      left: 9vw;
+      left: 16.8vw;
+      @include media($from: 'md', $until: 'xl') {
+        left: 19.4vw;
+      }
+      @include media($until: 'sm') {
+        left: 3vw;
+      }
       width: inherit;
       bottom: inherit;
       li {
@@ -126,27 +141,44 @@
   }
 }
 
-body {
-  overflow-x: hidden;
-}
-
 .cases-carousel-multicol {
   padding-top: toRem(60);
   padding-bottom: toRem(60);
   background-color: $lightgrey;
   border: solid toRem(40) $white;
+  @include media($until: 'sm') {
+    border: solid toRem(20) $white;
+  }
+  .container {
+    @include media($until: 'sm') {
+      padding: toRem(5);
+    }
+  }
   .uagb-slick-carousel {
     padding: 0;
     .uagb-post__items {
       margin-right: -282px;
+      @include media($until: 'sm') {
+        margin-right: inherit;
+      }
       .slick-list {
         .slick-track {
           .slick-slide {
             height: auto;
             margin-right: 20px;
+            @include media($until: 'sm') {
+              margin-right: inherit;
+            }
+
             .uagb-post__inner-wrap {
               padding: toRem(40);
+              @include media($until: 'sm') {
+                padding: toRem(20);
+              }
               height: toRem(550);
+              @include media($until: 'xl') {
+                height: toRem(450);
+              }
 
               .uagb-post__image {
                 &::before {
@@ -154,12 +186,10 @@ body {
                   opacity: 1;
                 }
               }
-              .uagb-post__title {
-                font-family: 'Poppins Bold';
-              }
               .uagb-post__text {
                 overflow: inherit;
                 .uagb-post__title {
+                  font-family: 'Poppins Bold';
                   margin-top: toRem(40);
                   a {
                     font-size: inherit;
@@ -167,6 +197,11 @@ body {
                     &:hover {
                       border: 0;
                     }
+                  }
+                }
+                .uagb-post__excerpt {
+                  @include media($until: 'sm') {
+                    margin-right: toRem(50);
                   }
                 }
                 .uagb-post-grid-byline {
@@ -186,6 +221,9 @@ body {
                   display: block;
                   color: $white;
                   width: toRem(310);
+                  @include media($until: 'xl') {
+                    width: toRem(220);
+                  }
                 }
               }
             }
@@ -198,6 +236,10 @@ body {
       &.uagb-post-grid {
         .slick-next,
         .slick-prev {
+          margin-left: inherit;
+          @include media($until: 'sm') {
+            display: none !important;
+          }
           position: relative;
           bottom: toRem(-60);
           border: toRem($border-width) solid $black;
@@ -229,6 +271,11 @@ body {
       ul.slick-dots {
         top: inherit;
         left: toRem(100);
+        @include media($until: 'sm') {
+          left: 0;
+          padding-top: toRem(5);
+          padding-left: 0;
+        }
         bottom: toRem(1);
         li {
           button {

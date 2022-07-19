@@ -1,23 +1,27 @@
-import $ from 'jquery';
+import $, { css } from 'jquery';
 import 'bootstrap';
 import './../scss/style.scss';
 
 $(document).ready(function ($) {
   $('.navbar-toggler').on('click', function (e) {
     if ($('.btn.btn-outline-light.navbar-metanav').css('display') == 'none') {
-      if ($('.shrink').length === 0) {
-        $('.btn.btn-outline-light.navbar-metanav').show();
-      } else {
-        $('.navbar-brand').toggleClass('light');
-
-        /*   window.setTimeout(function () {
-          $('.navbar-brand').toggleClass('light');
-        }, 500); */
-      }
+      /* to close nav */
+      $('header').removeAttr('style');
+      $('.btn.btn-outline-light.navbar-metanav').show();
+      $('.shrink .navbar').css('background-color', 'white');
+      $('html, body').removeAttr('style');
     } else {
+      /* to open nav */
       $('.btn.btn-outline-light.navbar-metanav').hide();
+      $('.shrink .navbar').css('background-color', 'transparent');
+      $('html, body').css('overflow', 'hidden');
+      $('header').css('padding-right', '15px');
     }
-    //$('.btn.btn-outline-light.navbar-metanav').toggle();
+    if ($('.shrink').length != 0) {
+      window.setTimeout(function () {
+        $('.navbar-brand').toggleClass('light');
+      }, 100);
+    }
   });
   /* make click available on whole teaser stripe */
   $('.teaser-stripe').on('click', function (e) {
@@ -28,6 +32,7 @@ $(document).ready(function ($) {
   //$.fn.portfolioCarousel();
 });
 
+/* cssonly carousel for portfolio items */
 /* $.fn.portfolioCarousel = function () {
   $('.cases-slider .wp-block-post-template').each(function () {
     let portfolioItems = $(this).find('.type-case');
@@ -43,14 +48,18 @@ $(document).ready(function ($) {
   });
 }; */
 
-// When the user scrolls down 50px from the top of the document, resize the header's font size
+// When the user scrolls down 100vh from the top of the document, shrink the navheader
 
 $(document).on('scroll', function () {
-  if ($(document).scrollTop() > window.innerHeight - 100) {
-    $('header').addClass('shrink');
-    $('header .navbar-brand').addClass('light');
-  } else {
-    $('header').removeClass('shrink');
-    $('.btn.btn-outline-light.navbar-metanav').show();
+  if ($('.navbar-collapse.show').length === 0) {
+    if ($(document).scrollTop() > window.innerHeight - 100) {
+      $('header').addClass('shrink');
+      $('header .navbar-brand').addClass('light');
+    } else {
+      $('header .navbar-brand').removeClass('light');
+      $('header').removeClass('shrink');
+      $('.navbar').removeAttr('style');
+      $('.btn.btn-outline-light.navbar-metanav').show();
+    }
   }
 });

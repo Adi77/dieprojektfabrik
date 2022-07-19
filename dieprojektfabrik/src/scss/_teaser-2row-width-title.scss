@@ -1,8 +1,15 @@
 .teaser-2row-width-title {
   background-color: $lightgrey;
   border: solid toRem(40) $white;
+  @include media($until: 'sm') {
+    border: solid toRem(20) $white;
+  }
   .container {
     margin: toRem(100) auto toRem(60);
+    @include media($until: 'sm') {
+      padding: toRem(5);
+      margin: toRem(60) auto toRem(60);
+    }
     .wp-block-columns {
       .wp-block-column {
         > * {

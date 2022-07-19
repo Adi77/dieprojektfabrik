@@ -1,5 +1,5 @@
 .navbar {
-  &.fixed-top {
+  &.navbar-dark {
     padding: 0;
     .navbar-brand {
       margin: 20px 0 0 35px;
@@ -44,7 +44,9 @@
   right: -100%;
   bottom: 0;
   transition: all 0.3s ease-in-out;
-
+  @include media($until: 'xl') {
+    padding-top: 14vh;
+  }
   &.show {
     transform: scale(1) !important;
     top: 0 !important;
@@ -56,9 +58,16 @@
 
   .navbar-nav {
     margin-top: 6vh;
+    @include media($until: 'xl') {
+      margin-top: 0;
+    }
     .nav-item {
       .nav-link {
         font-size: 7vh;
+        @include media($until: 'xl') {
+          font-size: 5vh;
+          line-height: 1.1;
+        }
         border: 0;
         &:hover {
           -webkit-text-fill-color: $orange;
@@ -113,6 +122,9 @@
       > div:last-child {
         .navbar-nav {
           text-align: right;
+          @include media($until: 'xl') {
+            text-align: left;
+          }
         }
       }
     }
@@ -121,13 +133,24 @@
 
 header {
   &.shrink {
+    position: fixed;
+    @include media($until: 'sm') {
+      height: inherit;
+      top: 0;
+    }
     .navbar {
       background-color: $white;
+      transition: all 0.3s ease-in-out;
+      &.navbar-dark {
+        @include media($until: 'sm') {
+          position: inherit;
+        }
+      }
       .navbar-brand {
         width: toRem(60);
-        margin: toRem(10) 0 toRem(10) toRem(60);
+        margin: toRem(5) 0 toRem(5) toRem(60);
+        transition: all 0.3s ease-in-out;
         &.light {
-          transition: all 0.3s ease;
           svg {
             path {
               &[fill='#ffffff'] {
@@ -138,10 +161,15 @@ header {
         }
       }
       .navbar-metanav {
-        display: none;
+        color: $black;
+        border-color: $black;
+        &:hover {
+          color: $white;
+          background-color: $black;
+        }
       }
       .navbar-toggler {
-        padding-right: toRem(70);
+        //padding-right: toRem(70);
         .navbar-toggler-icon {
           transition: all 0.3s ease;
           background-image: escape-svg($navbar-light-toggler-icon-bg);

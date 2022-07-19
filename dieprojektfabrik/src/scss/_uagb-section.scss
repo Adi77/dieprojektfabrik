@@ -1,11 +1,18 @@
 .wp-block-uagb-section {
   border: solid 2.5rem white;
+  @include media($until: 'sm') {
+    border: 0;
+    margin-bottom: toRem(20);
+  }
 
   .uagb-section__overlay {
     width: 50vw;
   }
   .container {
     margin: toRem(100) auto toRem(60);
+    @include media($until: 'sm') {
+      margin: toRem(60) auto toRem(60);
+    }
     .wp-block-button__link {
       @include dpf-button($white, $black, 0, 50);
     }

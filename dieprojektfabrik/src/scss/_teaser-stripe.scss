@@ -2,6 +2,9 @@
   cursor: pointer;
   background-color: $orange;
   height: toRem(100);
+  @include media($until: 'sm') {
+    height: toRem(120);
+  }
   p {
     padding-top: toRem(28);
     margin-bottom: 0;

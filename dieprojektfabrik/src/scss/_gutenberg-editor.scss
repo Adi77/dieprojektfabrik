@@ -28,6 +28,10 @@ html .wp-block h2 {
   margin-bottom: inherit !important;
 } */
 
+.wp-block-columns {
+  flex-wrap: wrap !important;
+}
+
 /* buttons */
 
 .wp-block-button__link {
@@ -60,5 +64,11 @@ html .wp-block h2 {
     + h2 {
       margin-top: 0 !important;
     }
+  }
+}
+
+@include media($until: 'sm') {
+  .wp-block-columns {
+    margin-bottom: 0;
   }
 }
