@@ -4,6 +4,7 @@ import './../scss/style.scss';
 
 $(document).ready(function ($) {
   $('.navbar-toggler').on('click', function (e) {
+    $('body').toggleClass('navi-open');
     if ($('.btn.btn-outline-light.navbar-metanav').css('display') == 'none') {
       /* to close nav */
       $('header').removeAttr('style');
@@ -15,7 +16,6 @@ $(document).ready(function ($) {
       $('.btn.btn-outline-light.navbar-metanav').hide();
       $('.shrink .navbar').css('background-color', 'transparent');
       $('html, body').css('overflow', 'hidden');
-      $('header').css('padding-right', '15px');
     }
     if ($('.shrink').length != 0) {
       window.setTimeout(function () {

@@ -20,3 +20,12 @@ header {
     @include dpf-button($white, $white, 1, 20);
   }
 }
+
+.navi-open {
+  header {
+    padding-right: toRem(15);
+    @include media($until: 'sm') {
+      padding-right: toRem(0);
+    }
+  }
+}

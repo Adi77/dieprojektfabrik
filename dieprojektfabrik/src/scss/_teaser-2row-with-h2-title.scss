@@ -6,15 +6,34 @@
   }
   .container {
     margin: toRem(100) auto toRem(60);
+    @include media($from: 'lg', $until: 'lg') {
+      margin: toRem(30) auto toRem(30);
+    }
     @include media($until: 'sm') {
       padding: toRem(5);
       margin: toRem(60) auto toRem(60);
     }
+
     .wp-block-columns {
       .wp-block-column {
-        > * {
-          &:first-child {
+        &:first-child {
+          margin-top: 0;
+          h2 {
             margin-top: 0;
+          }
+        }
+        &:last-child {
+          h2 {
+            &.has-text-color {
+              margin-top: 0;
+              margin-bottom: 0;
+              @include media($until: 'lg') {
+                margin-top: toRem(15);
+              }
+              + h2 {
+                margin-top: 0;
+              }
+            }
           }
         }
       }

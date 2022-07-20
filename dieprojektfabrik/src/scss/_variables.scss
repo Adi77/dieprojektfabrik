@@ -7,8 +7,10 @@ $container-max-widths: (
   xxl: 1400px,
 );
 
+$spacer: 1rem;
+
 $gutters: (
-  6: 100px,
+  6: $spacer * 4,
 );
 
 /* Theme colors */

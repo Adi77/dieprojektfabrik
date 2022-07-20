@@ -2,6 +2,9 @@ footer {
   color: $black;
   background-color: $lightgrey;
   padding: toRem(60) toRem(40);
+  @include media($until: 'sm') {
+    padding: toRem(60) toRem(15);
+  }
 
   h4 {
     font-size: toRem(20);

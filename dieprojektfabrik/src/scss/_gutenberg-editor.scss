@@ -12,6 +12,14 @@ body.page-editor-page .editor-block-list__block {
   max-width: none !important;
 }
 
+.block-editor__container
+  .wp-block
+  .cases-carousel-multicol
+  .uagb-slick-carousel
+  .uagb-post__items {
+  height: 500px !important;
+}
+
 html .wp-block .wp-block-column {
   //display: inherit;
   //margin: inherit !important;
@@ -27,6 +35,10 @@ html .wp-block .wp-block-column {
 html .wp-block h2 {
   margin-bottom: inherit !important;
 } */
+
+/* 
+* gutenberg frontend reset 
+*/
 
 .wp-block-columns {
   flex-wrap: wrap !important;
@@ -70,5 +82,15 @@ html .wp-block h2 {
 @include media($until: 'sm') {
   .wp-block-columns {
     margin-bottom: 0;
+  }
+}
+
+.wp-block-uagb-section {
+  &.uagb-section__wrap {
+    padding-top: inherit;
+    padding-bottom: inherit;
+  }
+  .uagb-section__inner-wrap {
+    max-width: inherit;
   }
 }

@@ -3,24 +3,39 @@
   background-color: $orange;
   height: toRem(100);
   @include media($until: 'sm') {
-    height: toRem(120);
+    height: toRem(80);
   }
-  p {
-    padding-top: toRem(28);
-    margin-bottom: 0;
-    a {
-      color: $white;
-      text-transform: uppercase;
-      &:after {
-        content: '';
-        position: relative;
-        top: toRem(7);
-        background-image: escape-svg($arrow-right-white);
-        width: toRem(30);
-        height: toRem(30);
-        margin-left: toRem(80);
-        transition: margin-left 0.6s ease;
-        display: inline-block;
+  .container {
+    @include media($until: 'sm') {
+      padding-left: toRem(5);
+    }
+    p {
+      text-align: right;
+      padding-top: toRem(28);
+      @include media($until: 'sm') {
+        padding-top: toRem(18);
+      }
+      margin-bottom: 0;
+      a {
+        color: $white;
+        text-transform: uppercase;
+        @include media($until: 'sm') {
+          font-size: toRem(18);
+        }
+        &:after {
+          content: '';
+          position: relative;
+          top: toRem(7);
+          background-image: escape-svg($arrow-right-white);
+          width: toRem(30);
+          height: toRem(30);
+          margin-left: toRem(80);
+          @include media($until: 'sm') {
+            margin-left: toRem(5);
+          }
+          transition: margin-left 0.6s ease;
+          display: inline-block;
+        }
       }
     }
   }
@@ -31,7 +46,7 @@
         border-bottom: 0;
       }
       &:after {
-        margin-left: toRem(20);
+        margin-left: toRem(20) !important;
       }
     }
   }

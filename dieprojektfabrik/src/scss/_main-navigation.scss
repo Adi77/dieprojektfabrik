@@ -3,6 +3,16 @@
     padding: 0;
     .navbar-brand {
       margin: 20px 0 0 35px;
+      svg {
+        @include media($until: 'sm') {
+          width: toRem(90);
+        }
+      }
+    }
+    .navbar-metanav {
+      @include media($until: 'sm') {
+        visibility: hidden !important;
+      }
     }
     .navbar-toggler {
       padding: 20px 40px 20px 20px;
@@ -44,6 +54,10 @@
   right: -100%;
   bottom: 0;
   transition: all 0.3s ease-in-out;
+  @include media($until: 'sm') {
+    overflow-y: auto;
+  }
+
   @include media($until: 'xl') {
     padding-top: 14vh;
   }
@@ -68,6 +82,10 @@
           font-size: 5vh;
           line-height: 1.1;
         }
+        @include media($until: 'sm') {
+          font-size: 4vh;
+          line-height: 1;
+        }
         border: 0;
         &:hover {
           -webkit-text-fill-color: $orange;
@@ -90,11 +108,22 @@
         padding-bottom: 20px;
         .nav-item {
           margin-right: toRem(20);
+          @include media($until: 'sm') {
+            margin-right: toRem(10);
+          }
           display: inline-block;
           .nav-link {
             font-size: toRem(20);
+            @include media($until: 'sm') {
+              font-size: 2vh;
+              line-height: 1;
+            }
             padding: toRem(10) toRem(20) toRem(6);
-            margin-bottom: 25px;
+            margin-bottom: toRem(25);
+            @include media($until: 'sm') {
+              margin-bottom: toRem(10);
+              margin-right: 0;
+            }
             @include dpf-button($white, $white, 1, 50);
             &:hover {
               -webkit-text-fill-color: $black;
@@ -113,7 +142,12 @@
     content: '';
     width: toRem(600);
     height: toRem(600);
+    @include media($until: 'sm') {
+      width: toRem(400);
+      height: toRem(400);
+    }
     background-image: escape-svg($nav-bg-icon);
+    background-repeat: no-repeat;
   }
   .container {
     padding-right: 10vw;
@@ -148,7 +182,15 @@ header {
       }
       .navbar-brand {
         width: toRem(60);
+        svg {
+          @include media($until: 'sm') {
+            width: inherit;
+          }
+        }
         margin: toRem(5) 0 toRem(5) toRem(60);
+        @include media($until: 'sm') {
+          margin-left: toRem(35);
+        }
         transition: all 0.3s ease-in-out;
         &.light {
           svg {

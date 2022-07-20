@@ -51,12 +51,6 @@ h2 {
   }
   margin-top: toRem(40);
   margin-bottom: toRem(30);
-  &.has-text-color {
-    margin-bottom: 0;
-    + h2 {
-      margin-top: 0;
-    }
-  }
 }
 h3 {
   font-size: toRem(45);

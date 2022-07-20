@@ -10,9 +10,7 @@
   .uagb-post__inner-wrap {
     height: 90vh;
     padding: 36vh 20vw 0 11vw;
-    @include media($until: 'sm') {
-      padding-top: toRem(200);
-    }
+
     .uagb-post__image {
       &::before {
         background-color: transparent;
@@ -49,10 +47,10 @@
       .slick-prev {
         top: 80vh;
         @include media($from: 'md', $until: 'xl') {
-          top: 81.2vh;
+          top: 79.4vh;
         }
         @include media($until: 'sm') {
-          top: 74vh;
+          display: none !important;
         }
         left: 0;
         background-repeat: no-repeat;
@@ -73,6 +71,12 @@
       }
       .slick-next {
         margin-left: 14.5vw;
+        @include media($until: 'sm') {
+          margin-left: 27vw;
+        }
+        @include media($from: 'md', $until: 'xl') {
+          margin-left: 18vw;
+        }
         background-image: escape-svg($carousel-next-btn);
         &:hover {
           background-image: escape-svg($carousel-next-fill-btn);
@@ -93,11 +97,14 @@
   &.uagb-post-grid {
     ul.slick-dots {
       top: 75.6vh;
+      @include media($until: 'sm') {
+        top: 78vh;
+      }
       text-align: left;
       display: inline-block;
       left: 16.8vw;
       @include media($from: 'md', $until: 'xl') {
-        left: 19.4vw;
+        left: 23vw;
       }
       @include media($until: 'sm') {
         left: 3vw;
@@ -150,7 +157,9 @@
     border: solid toRem(20) $white;
   }
   .container {
+    margin: toRem(100) auto toRem(100);
     @include media($until: 'sm') {
+      margin: toRem(60) auto toRem(100);
       padding: toRem(5);
     }
   }
@@ -158,17 +167,12 @@
     padding: 0;
     .uagb-post__items {
       margin-right: -282px;
-      @include media($until: 'sm') {
-        margin-right: inherit;
-      }
+
       .slick-list {
         .slick-track {
           .slick-slide {
             height: auto;
             margin-right: 20px;
-            @include media($until: 'sm') {
-              margin-right: inherit;
-            }
 
             .uagb-post__inner-wrap {
               padding: toRem(40);

@@ -1,17 +1,23 @@
-.wp-block-uagb-section {
+.teaser-curved-bg {
   border: solid 2.5rem white;
   @include media($until: 'sm') {
-    border: 0;
-    margin-bottom: toRem(20);
+    border: solid 1.2rem white;
+    margin-bottom: 0;
+    height: 1000px;
   }
 
   .uagb-section__overlay {
     width: 50vw;
+    @include media($until: 'sm') {
+      width: 90.2vw;
+      height: 60%;
+    }
   }
   .container {
     margin: toRem(100) auto toRem(60);
     @include media($until: 'sm') {
-      margin: toRem(60) auto toRem(60);
+      margin: toRem(60) auto toRem(0);
+      padding: 0;
     }
     .wp-block-button__link {
       @include dpf-button($white, $black, 0, 50);

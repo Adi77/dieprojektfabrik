@@ -1,5 +1,11 @@
 .cta-contact-section {
+  height: inherit;
+  border: solid toRem(40) $white;
+  @include media($until: 'sm') {
+    border: solid toRem(20) $white;
+  }
   .uagb-section__overlay {
+    height: 100%;
     width: inherit;
     background-image: escape-svg($nav-bg-icon);
     background-repeat: no-repeat;
@@ -7,6 +13,10 @@
     background-size: 93vh;
   }
   .container {
+    margin: toRem(60) auto toRem(80);
+    @include media($until: 'sm') {
+      margin: toRem(50) auto toRem(80);
+    }
     .wp-block-column {
       color: $white;
       text-align: center;
