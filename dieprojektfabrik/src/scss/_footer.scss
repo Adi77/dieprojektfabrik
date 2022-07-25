@@ -65,6 +65,7 @@ footer {
           padding: toRem(10) toRem(16) toRem(6);
           margin-bottom: toRem(25);
           @include dpf-button($black, $black, 1, 50);
+
           &:hover {
             -webkit-text-fill-color: $white;
             -webkit-text-stroke-width: 1px;

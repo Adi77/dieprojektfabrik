@@ -24,8 +24,23 @@ $(document).ready(function ($) {
     }
   });
   /* make click available on whole teaser stripe */
-  $('.teaser-stripe').on('click', function (e) {
-    $(this).find('a')[0].click();
+  $(
+    '.teaser-stripe, .teaser-stripe-title-text-with-hover:not(.no-links), .wp-block-cover'
+  ).on('click', function (e) {
+    if ($(this).find('a').attr('href').length != 0) {
+      window.location.href = $(this).find('a').attr('href');
+      $(this).css('cursor', 'pointer');
+    }
+
+    return false;
+  });
+
+  $('.wp-block-cover').on('mouseenter', function (e) {
+    if ($(this).find('a').length) {
+      if ($(this).find('a').attr('href').length != 0) {
+        $(this).css('cursor', 'pointer');
+      }
+    }
   });
 
   /* cssonly carousel for portfolio items */

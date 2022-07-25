@@ -32,12 +32,30 @@ button {
 
 h1,
 h2,
+h3,
+h4,
+h5,
+h6 {
+  a {
+    color: $white;
+    &:hover {
+      color: $white;
+      border: 0;
+    }
+  }
+}
+
+h1,
+h2,
 h3 {
   text-transform: uppercase;
 }
 
 h1 {
   font-size: toRem(85);
+  @include media($from: 'sm', $until: 'lg') {
+    font-size: toRem(65);
+  }
   @include media($until: 'sm') {
     font-size: toRem(50);
     line-height: 1.1;
@@ -61,6 +79,9 @@ h4 {
 
   a {
     text-transform: none;
+  }
+  + h2 {
+    margin-top: 0;
   }
 }
 
@@ -94,6 +115,80 @@ input {
   }
   &[type='submit'] {
     background-color: $yellow;
+  }
+}
+
+/* lists in content elements */
+
+ul,
+ol {
+  &.dpf-list {
+    padding: 0;
+    list-style: none;
+    li {
+      border-bottom: 2px solid $black;
+      padding-bottom: toRem(15);
+      margin-bottom: toRem(15);
+      //margin-right: toRem(20);
+    }
+  }
+}
+
+/* pages with white header set black logo and hamburger */
+.page-id-12,
+.single-case,
+.single-post {
+  .navbar {
+    &.navbar-dark {
+      .navbar-brand {
+        svg {
+          path {
+            &[fill='#ffffff'] {
+              fill: $black;
+            }
+          }
+        }
+      }
+      .navbar-metanav {
+        color: $black;
+        border-color: $black;
+        &:hover {
+          color: $white;
+          background-color: $black;
+        }
+      }
+      .navbar-toggler {
+        .navbar-toggler-icon {
+          background-image: escape-svg($navbar-light-toggler-icon-bg);
+        }
+      }
+    }
+  }
+  h1 {
+    margin-top: toRem(300);
+    margin-bottom: 0;
+    @include media($until: 'sm') {
+      margin-top: toRem(150);
+    }
+  }
+}
+.navi-open {
+  &.page-id-12,
+  &.single-case,
+  &.single-post {
+    .navbar {
+      &.navbar-dark {
+        .navbar-brand {
+          svg {
+            path {
+              &[fill='#ffffff'] {
+                fill: $white;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 

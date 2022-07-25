@@ -1,4 +1,12 @@
 .teaser-2row-width-title {
+  h2,
+  h3,
+  h4 {
+    margin-top: 0;
+  }
+  h4 {
+    margin-bottom: toRem(40);
+  }
   background-color: $lightgrey;
   border: solid toRem(40) $white;
   @include media($until: 'sm') {
@@ -18,20 +26,13 @@
       .wp-block-column {
         &:first-child {
           margin-top: 0;
-          h2 {
-            margin-top: 0;
-          }
         }
         &:last-child {
           h2 {
             &.has-text-color {
-              margin-top: 0;
               margin-bottom: 0;
               @include media($until: 'lg') {
                 margin-top: toRem(15);
-              }
-              + h2 {
-                margin-top: 0;
               }
             }
           }

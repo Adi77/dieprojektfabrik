@@ -2,29 +2,61 @@
   border: solid 2.5rem white;
   @include media($until: 'sm') {
     border: solid 1.2rem white;
-    margin-bottom: 0;
-    height: 1000px;
   }
 
-  .uagb-section__overlay {
-    width: 50vw;
-    @include media($until: 'sm') {
-      width: 90.2vw;
-      height: 60%;
-    }
-  }
-  .container {
-    margin: toRem(100) auto toRem(60);
-    @include media($until: 'sm') {
-      margin: toRem(60) auto toRem(0);
+  .container-lg {
+    @include media($until: 'xl') {
       padding: 0;
     }
-    .wp-block-button__link {
-      @include dpf-button($white, $black, 0, 50);
+
+    .wp-block-group__inner-container {
+      .wp-block-columns {
+        .wp-block-column {
+          .wp-block-button__link {
+            @include dpf-button($white, $black, 0, 50);
+          }
+          .wp-block-image {
+            @include media($until: 'xl') {
+              margin-left: -19px;
+              margin-right: -19px;
+            }
+
+            img {
+              @include media($from: 'lg') {
+                position: absolute;
+                right: -20px;
+                top: 0;
+                height: 100%;
+                bottom: 0;
+                margin: inherit;
+                object-fit: cover;
+              }
+            }
+          }
+          &:first-child {
+            z-index: 1;
+            padding: toRem(80) toRem(20) toRem(80) 0;
+
+            @include media($until: 'sm') {
+              padding-left: toRem(20);
+            }
+
+            @include media($from: 'sm', $until: 'xl') {
+              padding-left: toRem(25);
+            }
+          }
+        }
+      }
     }
   }
-  + .teaser-2row-width-title,
-  + .cases-carousel-multicol,
+  &.quote {
+    blockquote {
+      p {
+        font-family: 'Miso Bold', sans-serif;
+        font-size: toRem(45);
+      }
+    }
+  }
   + .wp-block-uagb-section {
     border-top: 0;
   }

@@ -54,8 +54,9 @@
   right: -100%;
   bottom: 0;
   transition: all 0.3s ease-in-out;
-  @include media($until: 'sm') {
-    overflow-y: auto;
+  @include media($until: 'lg') {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
   }
 
   @include media($until: 'xl') {
@@ -71,16 +72,19 @@
   }
 
   .navbar-nav {
-    margin-top: 6vh;
+    margin-top: 12vh;
     @include media($until: 'xl') {
-      margin-top: 0;
+      margin-top: 4vh;
     }
-    .nav-item {
-      .nav-link {
+    > .nav-item {
+      > .nav-link {
         font-size: 7vh;
+        padding-top: 0;
+        padding-bottom: 0;
         @include media($until: 'xl') {
           font-size: 5vh;
           line-height: 1.1;
+          padding-bottom: toRem(20);
         }
         @include media($until: 'sm') {
           font-size: 4vh;
@@ -94,25 +98,25 @@
         }
       }
       &.current_page_item {
-        .nav-link {
+        > .nav-link {
           color: $orange;
           -webkit-text-fill-color: $orange;
           -webkit-text-stroke-width: 1px;
           -webkit-text-stroke-color: $orange;
         }
       }
-      .navbar-nav {
+      > .navbar-nav {
         position: relative;
         display: inline-block;
         margin-top: 5px;
         padding-bottom: 20px;
-        .nav-item {
+        > .nav-item {
           margin-right: toRem(20);
           @include media($until: 'sm') {
             margin-right: toRem(10);
           }
           display: inline-block;
-          .nav-link {
+          > .nav-link {
             font-size: toRem(20);
             @include media($until: 'sm') {
               font-size: 2vh;
@@ -129,6 +133,16 @@
               -webkit-text-fill-color: $black;
               -webkit-text-stroke-width: 1px;
               -webkit-text-stroke-color: $black;
+            }
+          }
+          &.current_page_item {
+            > .nav-link {
+              color: $white;
+              -webkit-text-fill-color: $white;
+              -webkit-text-stroke-width: toRem(0.5);
+              -webkit-text-stroke-color: $white;
+              background-color: $orange;
+              border: 0;
             }
           }
         }
@@ -211,7 +225,6 @@ header {
         }
       }
       .navbar-toggler {
-        //padding-right: toRem(70);
         .navbar-toggler-icon {
           transition: all 0.3s ease;
           background-image: escape-svg($navbar-light-toggler-icon-bg);

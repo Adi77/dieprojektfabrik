@@ -1,0 +1,55 @@
+.team-portraits-3col {
+  background-color: $lightgrey;
+  border: solid 2.5rem white;
+  padding: toRem(80) 0 toRem(80) !important;
+  @include media($until: 'sm') {
+    border: solid 1.2rem white;
+  }
+
+  .wp-block-column {
+    p {
+      &:nth-child(2) {
+        font-family: 'Poppins SemiBold';
+        text-transform: uppercase;
+        margin-top: toRem(40);
+        margin-bottom: 0;
+      }
+      &:nth-child(3) {
+        margin-bottom: toRem(20);
+      }
+      &:nth-child(4) {
+        a {
+          border-bottom: 1px solid $black;
+          &:hover {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+    .wp-block-button__link {
+      padding: toRem(7) toRem(10) toRem(5);
+      margin-right: toRem(10);
+      margin-bottom: toRem(10);
+      text-transform: uppercase;
+    }
+    &:nth-child(1) {
+      .wp-block-button__link {
+        @include dpf-button($black, $green, 0, 50, 0);
+      }
+    }
+    &:nth-child(2) {
+      .wp-block-button__link {
+        @include dpf-button($black, $orange, 0, 50, 0);
+      }
+    }
+    &:nth-child(3) {
+      .wp-block-button__link {
+        @include dpf-button($black, $yellow, 0, 50, 0);
+      }
+    }
+  }
+
+  + .wp-block-uagb-section {
+    border-top: 0;
+  }
+}

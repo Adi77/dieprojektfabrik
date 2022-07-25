@@ -234,6 +234,7 @@ class StarterSite extends Timber\Site
         );
 
         add_theme_support('menus');
+        add_post_type_support('case', 'excerpt');
         /* Enable ci/cd styles in Backend */
         add_theme_support('editor-styles');
         add_editor_style('dist/site.css');
@@ -378,7 +379,7 @@ add_action('widgets_init', 'dieprojektfabrik_widgets_init');
 
 
 
-
+/* remove widget blocks from gutenberg editor */
 function phi_theme_support()
 {
     remove_theme_support('widgets-block-editor');
@@ -387,3 +388,20 @@ function phi_theme_support()
 
     remove_filter('render_block', 'wp_render_layout_support_flag', 10, 2);
     remove_filter('render_block', 'gutenberg_render_layout_support_flag', 10, 2);
+
+
+
+/*
+
+    function prefix_remove_core_block_styles()
+    {
+        global $wp_styles;
+
+        foreach ($wp_styles->queue as $key => $handle) {
+            if (strpos($handle, 'wp-block-') === 0) {
+                wp_dequeue_style($handle);
+            }
+        }
+    }
+    add_action('wp_enqueue_scripts', 'prefix_remove_core_block_styles');
+ */

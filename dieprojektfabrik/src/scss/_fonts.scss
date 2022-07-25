@@ -28,6 +28,18 @@
     url('../fonts/Poppins-Bold.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Poppins SemiBold';
+  src: url('../fonts/Poppins-SemiBold.woff') format('woff'),
+    url('../fonts/Poppins-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins SemiBoldItalic';
+  src: url('../fonts/Poppins-SemiBoldItalic.woff') format('woff'),
+    url('../fonts/Poppins-SemiBoldItalic.woff2') format('woff2');
+}
+
 body {
   font-family: 'Poppins Regular', sans-serif;
 }

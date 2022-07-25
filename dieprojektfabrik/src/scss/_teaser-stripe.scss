@@ -6,11 +6,11 @@
     height: toRem(80);
   }
   .container {
-    @include media($until: 'sm') {
-      padding-left: toRem(5);
-    }
     p {
       text-align: right;
+      @include media($until: 'sm') {
+        text-align: left;
+      }
       padding-top: toRem(28);
       @include media($until: 'sm') {
         padding-top: toRem(18);
@@ -20,7 +20,7 @@
         color: $white;
         text-transform: uppercase;
         @include media($until: 'sm') {
-          font-size: toRem(18);
+          font-size: toRem(17);
         }
         &:after {
           content: '';
@@ -31,7 +31,7 @@
           height: toRem(30);
           margin-left: toRem(80);
           @include media($until: 'sm') {
-            margin-left: toRem(5);
+            margin-left: toRem(10);
           }
           transition: margin-left 0.6s ease;
           display: inline-block;
@@ -49,5 +49,9 @@
         margin-left: toRem(20) !important;
       }
     }
+  }
+  &.uagb-section__wrap {
+    padding-top: inherit;
+    padding-bottom: inherit;
   }
 }

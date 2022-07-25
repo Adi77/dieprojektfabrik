@@ -1,11 +1,13 @@
 // Custom Breakpoints
 $breakpoints: (
+  xs: 0,
   sm: 576px,
   md: 768px,
   lg: 992px,
   xl: 1200px,
   xxl: 1400px,
 );
+
 // Media-Query Mixin
 @mixin media($from: false, $until: false, $and: false, $media-type: all) {
   $min-width: 0;
@@ -45,6 +47,12 @@ $breakpoints: (
     $query: str-slice(unquote($query), 6);
   }
 
+  /*   // hover: none
+  @if ($media-type == 'mobile') {
+    $media-type: '';
+    $query: ' and (hover: none)';
+  }
+ */
   @media #{$media-type + $query} {
     @content;
   }
@@ -72,7 +80,8 @@ $breakpoints: (
   $color: $white,
   $background: $black,
   $outline: 1,
-  $radius: 50
+  $radius: 50,
+  $arrow: 1
 ) {
   color: $color;
   @if $outline == 1 {
@@ -81,7 +90,7 @@ $breakpoints: (
     background-color: $background;
   }
 
-  @if $background == $yellow {
+  @if $background == $yellow and $arrow == 1 {
     transition: all 0.5s ease;
     background-position: 120% 50%;
     background-repeat: no-repeat;
@@ -97,7 +106,7 @@ $breakpoints: (
     @if $outline == 1 {
       color: $black;
     } @else {
-      @if $background == $yellow {
+      @if $background == $yellow and $arrow == 1 {
         color: $black;
       } @else {
         color: $white;
@@ -106,7 +115,7 @@ $breakpoints: (
     background-color: $background;
     border-color: $background;
 
-    @if $outline == 0 {
+    @if $outline == 0 and $arrow == 1 {
       @if $background == $yellow {
         background-image: escape-svg($arrow-right-black);
       } @else {
@@ -114,7 +123,10 @@ $breakpoints: (
       }
 
       background-position: 90% 50%;
-      padding-right: 80px;
+      padding-right: toRem(80);
+    } @else {
+      background-image: none;
+      padding-right: toRem(10);
     }
   }
 
@@ -149,5 +161,71 @@ $breakpoints: (
   .badge {
     color: $background;
     background-color: $color;
+  }
+}
+
+@mixin casesBoxItem() {
+  .uagb-post__inner-wrap {
+    padding: toRem(40);
+    @include media($until: 'xl') {
+      padding: toRem(30);
+    }
+    @include media($until: 'sm') {
+      padding: toRem(20);
+    }
+    height: toRem(550);
+    @include media($until: 'xl') {
+      height: toRem(450);
+    }
+
+    .uagb-post__image {
+      &::before {
+        background-color: transparent;
+        opacity: 1;
+      }
+    }
+    .uagb-post__text {
+      overflow: inherit;
+      .uagb-post__title {
+        font-family: 'Poppins Bold';
+        margin-top: toRem(40);
+        a {
+          font-size: inherit;
+          color: $white;
+          &:hover {
+            border: 0;
+          }
+        }
+      }
+      .uagb-post__excerpt {
+        @include media($until: 'sm') {
+          margin-right: toRem(50);
+        }
+      }
+      .uagb-post-grid-byline {
+        a {
+          color: $white;
+          font-size: toRem(16);
+        }
+      }
+      &:nth-child(4) {
+        position: absolute;
+        top: 30px;
+      }
+      &:last-child {
+        position: absolute;
+        top: inherit;
+        bottom: 0;
+        display: block;
+        color: $white;
+        width: 18vw;
+        @include media($until: 'lg') {
+          width: 30vw;
+        }
+        @include media($until: 'md') {
+          width: 82vw;
+        }
+      }
+    }
   }
 }

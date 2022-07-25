@@ -1,0 +1,82 @@
+.contact-form {
+  background-color: $lightgrey;
+  border: solid 2.5rem white;
+  padding: toRem(80) 0 toRem(80) !important;
+  @include media($until: 'sm') {
+    border: solid 1.2rem white;
+  }
+
+  .wp-block-column {
+    .wpcf7-form {
+      input[type='text'],
+      input[type='email'],
+      input[type='file'] {
+        width: 100%;
+        margin-bottom: toRem(20);
+      }
+      input[type='file'] {
+        background-color: $white;
+
+        &::-webkit-file-upload-button {
+          visibility: hidden;
+        }
+        &::before {
+          content: '';
+          margin-left: 0;
+          display: inline-block;
+          background-image: escape-svg($arrow-up-black);
+          background-size: toRem(20);
+          background-position: 0px 4px;
+          background-repeat: no-repeat;
+          width: toRem(20);
+          height: toRem(20);
+          outline: none;
+          white-space: nowrap;
+          -webkit-user-select: none;
+          cursor: pointer;
+        }
+        &:hover {
+          &::before {
+            border-color: black;
+          }
+        }
+        &:active {
+          &::before {
+            background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+          }
+        }
+      }
+      /*       input[name='lebenslauf'] {
+        &::after {
+          content: 'Lebenslauf';
+        }
+      }
+      input[name='bewerbungsschreiben'] {
+        &::before {
+          content: 'Bewerbungsschreiben';
+        }
+      }
+      input[name='zeugnisse'] {
+        &::before {
+          content: 'Zeugnisse';
+        }
+      } */
+      input[type='submit'] {
+        margin-top: toRem(40);
+        padding: toRem(10) toRem(20) toRem(6);
+        text-transform: uppercase;
+      }
+      .upload-info {
+        padding: toRem(60) toRem(20) toRem(20);
+        font-size: toRem(14);
+      }
+      label {
+        margin-left: toRem(20);
+        margin-bottom: toRem(10);
+      }
+    }
+  }
+  + .wp-block-uagb-section {
+    border-top: 0;
+  }
+}

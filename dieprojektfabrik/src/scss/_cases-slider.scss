@@ -157,7 +157,7 @@
     border: solid toRem(20) $white;
   }
   .container {
-    margin: toRem(100) auto toRem(100);
+    margin: toRem(80) auto toRem(100);
     @include media($until: 'sm') {
       margin: toRem(60) auto toRem(100);
       padding: toRem(5);
@@ -174,63 +174,7 @@
             height: auto;
             margin-right: 20px;
 
-            .uagb-post__inner-wrap {
-              padding: toRem(40);
-              @include media($until: 'sm') {
-                padding: toRem(20);
-              }
-              height: toRem(550);
-              @include media($until: 'xl') {
-                height: toRem(450);
-              }
-
-              .uagb-post__image {
-                &::before {
-                  background-color: transparent;
-                  opacity: 1;
-                }
-              }
-              .uagb-post__text {
-                overflow: inherit;
-                .uagb-post__title {
-                  font-family: 'Poppins Bold';
-                  margin-top: toRem(40);
-                  a {
-                    font-size: inherit;
-                    color: $white;
-                    &:hover {
-                      border: 0;
-                    }
-                  }
-                }
-                .uagb-post__excerpt {
-                  @include media($until: 'sm') {
-                    margin-right: toRem(50);
-                  }
-                }
-                .uagb-post-grid-byline {
-                  a {
-                    color: $white;
-                    font-size: toRem(16);
-                  }
-                }
-                &:nth-child(4) {
-                  position: absolute;
-                  top: 30px;
-                }
-                &:last-child {
-                  position: absolute;
-                  top: inherit;
-                  bottom: 0;
-                  display: block;
-                  color: $white;
-                  width: toRem(310);
-                  @include media($until: 'xl') {
-                    width: toRem(220);
-                  }
-                }
-              }
-            }
+            @include casesBoxItem();
           }
         }
       }

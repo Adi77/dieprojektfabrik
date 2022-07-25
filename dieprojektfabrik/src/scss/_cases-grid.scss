@@ -1,0 +1,41 @@
+.cases-grid {
+  height: inherit;
+  border: solid toRem(40) $white;
+  border-bottom: solid toRem(20) $white;
+  @include media($until: 'sm') {
+    border: solid toRem(20) $white;
+    border-bottom: 0;
+  }
+  .cases-items-list-col {
+    padding: 0;
+  }
+  .uagb-post-grid {
+    .uagb-post__items {
+      .uagb-post__link-complete-box {
+        &:hover {
+          border: 0;
+        }
+      }
+      @include casesBoxItem();
+      .uagb-post__inner-wrap {
+        .uagb-post__text {
+          &:last-child {
+            @include media($from: 'md', $until: 'lg') {
+              width: 38vw;
+            }
+            @include media($until: 'md') {
+              width: 95vw;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.uagb-section__wrap {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+  + .cta-contact-section {
+    border-top: 0;
+  }
+}

@@ -1,0 +1,71 @@
+.header-2col-text-background-image {
+  color: white;
+  height: 90vh;
+  @include media($until: 'lg') {
+    height: inherit;
+    p {
+      margin: 0;
+    }
+  }
+  .container {
+    @include media($until: 'lg') {
+      padding: 20vh 0 500px;
+    }
+  }
+  a {
+    color: white;
+    &:before {
+      content: '';
+      background-image: escape-svg($arrow-left-white);
+
+      background-size: 130%;
+      background-repeat: no-repeat;
+      padding-left: toRem(20);
+      margin-right: toRem(20);
+    }
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
+  }
+
+  .uagb-section__overlay {
+    width: 50vw;
+    @include media($until: 'lg') {
+      width: 100vw;
+      height: 60%;
+    }
+  }
+  &.uagb-section__wrap {
+    padding-top: inherit;
+    padding-bottom: inherit;
+  }
+}
+
+/* 
+* single view 
+*/
+.single-case,
+.single-post {
+  .read-more {
+    display: none;
+  }
+  .header-2col-text-background-image {
+    /* iphone se */
+    @include media($until: 376) {
+      background-position: 0 100vh;
+      height: 130vh;
+    }
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .uagb-section__overlay {
+      background-color: $white;
+    }
+    .uagb-section__inner-wrap {
+      width: 100%;
+      p {
+        color: $black;
+      }
+    }
+  }
+}

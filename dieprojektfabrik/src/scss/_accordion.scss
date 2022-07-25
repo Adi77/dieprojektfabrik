@@ -1,0 +1,38 @@
+.accordion {
+  border: solid 2.5rem white;
+  @include media($until: 'sm') {
+    border: solid 1.2rem white;
+  }
+  padding: toRem(80) 0 0 !important;
+
+  .uagb-section__inner-wrap {
+    .wp-block-pb-accordion-item {
+      background-color: $lightgrey;
+      h4 {
+        padding: 0;
+        &::after {
+          content: '';
+          background-image: escape-svg($accordion-plus-circle-btn);
+          background-repeat: no-repeat;
+          background-size: toRem(40);
+          width: toRem(40);
+          height: toRem(40);
+        }
+      }
+      padding: toRem(20) toRem(20) toRem(10);
+      &:not(:last-child) {
+        margin-bottom: toRem(20);
+      }
+      &.is-open {
+        h4 {
+          &::after {
+            background-image: escape-svg($accordion-minus-circle-btn);
+          }
+        }
+      }
+    }
+  }
+  + .wp-block-uagb-section {
+    border-top: 0;
+  }
+}

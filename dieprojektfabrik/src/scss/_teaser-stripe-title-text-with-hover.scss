@@ -1,0 +1,81 @@
+.teaser-stripe-title-text-with-hover {
+  background-color: $black;
+  padding: 0;
+  border: solid toRem(40) $white;
+  cursor: pointer;
+  @include media($until: 'sm') {
+    border: solid toRem(20) $white;
+  }
+  color: $white;
+
+  &.uagb-section__wrap {
+    padding: 0;
+  }
+
+  .wp-block-columns {
+    margin: 0;
+  }
+  .container-fluid {
+    padding: toRem(80) 0;
+    h3,
+    h4,
+    h2,
+    p {
+      margin: 0;
+    }
+    a {
+      color: $white;
+    }
+
+    &:hover {
+      background-color: $grey;
+      color: $black;
+      a {
+        color: $black;
+        &::after {
+          content: '';
+          background-image: escape-svg($arrow-right-black);
+          background-repeat: no-repeat;
+          background-position: 90% -5%;
+          padding-right: 45px;
+        }
+      }
+    }
+    @media (hover: none) {
+      a {
+        color: $white;
+        &::after {
+          content: '';
+          background-image: escape-svg($arrow-right-white);
+          background-repeat: no-repeat;
+          background-position: 90% -5%;
+          padding-right: 45px;
+        }
+      }
+    }
+  }
+
+  + .teaser-stripe-title-text-with-hover {
+    border-bottom: 0;
+  }
+  + .cta-contact-section {
+    border-top: 0;
+  }
+
+  &.no-links {
+    .container-fluid {
+      border-bottom: 2px solid $white;
+      padding: toRem(80) 0;
+      .container {
+        cursor: auto;
+      }
+      &:hover {
+        color: inherit;
+        background-color: inherit;
+      }
+    }
+  }
+  + .wp-block-uagb-section {
+    border-top: 0;
+  }
+}

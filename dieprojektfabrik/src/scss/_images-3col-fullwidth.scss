@@ -1,0 +1,26 @@
+.images-3col-fullwidth {
+  padding: 0 !important;
+  border: solid toRem(40) $white;
+  @include media($until: 'sm') {
+    border: solid toRem(20) $white;
+  }
+  .col-12 {
+    &:not(:last-child) {
+      @include media($until: 'md') {
+        border-bottom: solid toRem(20) $white;
+      }
+    }
+    .wp-block-cover {
+      min-height: toRem(730);
+      .wp-block-cover__inner-container {
+        p {
+          font-size: toRem(20);
+          margin: 0;
+        }
+      }
+    }
+  }
+  + .wp-block-uagb-section {
+    border-top: 0;
+  }
+}
