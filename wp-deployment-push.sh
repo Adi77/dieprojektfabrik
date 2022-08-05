@@ -8,13 +8,12 @@ migrationDbDumpFolderLocationLocal=www
 wpContentFolderLocationLocal=www/wp-content
 
 # remote
-prodServerSsh=monikazi@wink.ch
-serverRootRemote=/home/monikazi
-webRootRelativeRemote=www/www.wink.ch/staging2
+prodServerSsh=daminomi@daminomi.myhostpoint.ch
+serverRootRemote=/home/daminomi
+webRootRelativeRemote=www/daminomi.myhostpoint.ch
 migrationDbDumpFolderLocationRemote=${serverRootRemote}/${webRootRelativeRemote}/migration
-domainNameProduction=https://www.wink.ch/staging2
-repoLocationRemote=wink-git-repo/wink.ch
-repoThemeLocationRemote=${repoLocationRemote}/$WP_THEME
+domainNameProduction=https://daminomi.myhostpoint.ch
+repoLocationRemote=dieprojektfabrik-git-repo/$WP_THEME
 
 wp-files_sync_plugins() {
 
@@ -24,7 +23,7 @@ wp-files_sync_plugins() {
         Yes)
             cd ${wpContentFolderLocationLocal}
             zip -r plugins.zip plugins
-            cd ../../../
+            cd ../../
             break
             ;;
         No) break ;;
