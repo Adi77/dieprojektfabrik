@@ -10,8 +10,9 @@
     "IE >= 11"
   ],
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "build": "cross-env NODE_ENV=production webpack -p --progress --hide-modules"
+    "start": "cross-env NODE_ENV=development webpack serve",
+    "build": "cross-env NODE_ENV=production webpack",
+    "buildVendor": "cross-env NODE_ENV=development webpack --config webpack.vendor.config"
   },
   "author": "",
   "license": "ISC"

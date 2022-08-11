@@ -1,13 +1,7 @@
+/* eslint-disable no-undef */
 const webpack = require('webpack');
 const path = require('path');
-const { merge } = require('webpack-merge');
-
-const glob = require('glob');
-const PurgeCSSPlugin = require('purgecss-webpack-plugin');
-
-const PATHS = {
-  src: path.join(__dirname, 'src'),
-};
+const merge = require('webpack-merge');
 
 const modeConfig =
   process.env.NODE_ENV === 'production'
@@ -24,7 +18,6 @@ module.exports = merge(
     output: {
       filename: '[name].js',
       path: path.resolve(__dirname, 'dist/'),
-      library: '[name]_dll',
     },
     module: {
       rules: [
@@ -33,6 +26,14 @@ module.exports = merge(
           exclude: /node_modules/,
           use: ['babel-loader'],
         },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/, // images
+          use: ['file-loader'],
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/, // fonts
+          use: ['file-loader'],
+        },
       ],
     },
     plugins: [
@@ -40,16 +41,10 @@ module.exports = merge(
         $: 'jquery',
         jQuery: 'jquery',
       }),
-      new PurgeCSSPlugin({
-        paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-        only: ['scss'],
-      }),
-      new webpack.DllReferencePlugin({
-        context: __dirname,
-        name: '[name]_dll',
-        manifest: path.join(__dirname, 'dist/', 'vendor-manifest.json'),
-      }),
     ],
+    externals: {
+      jquery: 'jQuery',
+    },
   },
   modeConfig
 );

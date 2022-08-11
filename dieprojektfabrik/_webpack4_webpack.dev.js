@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const path = require('path');
 
 module.exports = {
   output: {
@@ -9,10 +8,12 @@ module.exports = {
     rules: [
       {
         test: /\.(c|sa|sc)ss$/,
-        include: path.resolve(__dirname, 'src'),
         use: [
           {
             loader: 'style-loader',
+            options: {
+              sourceMap: true,
+            },
           },
           {
             loader: 'css-loader',
@@ -30,41 +31,30 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: true,
+              sassOptions: {
+                outputStyle: 'expanded',
+              },
             },
           },
         ],
       },
     ],
   },
-  cache: true,
-  experiments: {
-    lazyCompilation: true,
-  },
-  //devtool: 'eval-cheap-source-map',
   devServer: {
     port: 8080,
     host: '0.0.0.0', // this lets the server listen for requests from the lan network, not just localhost.
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
-    static: {
-      directory: path.resolve(process.cwd(), 'dist'),
-    },
     compress: true,
     hot: true,
-    allowedHosts: 'all',
+    inline: true,
+    stats: 'errors-only',
+    overlay: true,
+    disableHostCheck: true,
   },
-  performance: {
-    hints: false,
-  },
-  output: {
-    pathinfo: false,
-  },
-  optimization: {
-    //runtimeChunk: true,
-    removeAvailableModules: false,
-    removeEmptyChunks: false,
-    splitChunks: false,
-  },
-  //plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+  ],
 };

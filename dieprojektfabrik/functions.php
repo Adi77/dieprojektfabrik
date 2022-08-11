@@ -65,6 +65,7 @@ function dieprojektfabrik_theme_scripts()
             // load assets (dev)
                 wp_enqueue_script('dieprojektfabrik_theme-scripts-dev', 'http://'. getenv('VIRTUAL_HOST'). ':8080/site.js', array(), null, true);
                 //wp_enqueue_script('dieprojektfabrik_theme-admin-scripts-dev', 'http://localhost:8080/admin.js');
+               // wp_enqueue_script('boot5', 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), '', true);
           break;
         case 'staging':
             // load assets (staging)
@@ -338,7 +339,7 @@ function dieprojektfabrik_widgets_init()
             'after_title'   => '</h2>',
         )
     );
- 
+
     register_sidebar(
         array(
             'name'          => __('Footer 2', 'dieprojektfabrik'),

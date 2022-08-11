@@ -45,14 +45,13 @@
     &.uagb-post-grid {
       .slick-next,
       .slick-prev {
-        top: 80vh;
-        @include media($from: 'md', $until: 'xl') {
-          top: 79.4vh;
-        }
-        @include media($until: 'sm') {
+        top: 90%;
+        margin-left: 11%;
+        right: inherit;
+        @include media($until: 'md') {
           display: none !important;
         }
-        left: 0;
+
         background-repeat: no-repeat;
         background-size: toRem(116);
         width: toRem(45);
@@ -70,13 +69,7 @@
         }
       }
       .slick-next {
-        margin-left: 14.5vw;
-        @include media($until: 'sm') {
-          margin-left: 27vw;
-        }
-        @include media($from: 'md', $until: 'xl') {
-          margin-left: 18vw;
-        }
+        left: toRem(15);
         background-image: escape-svg($carousel-next-btn);
         &:hover {
           background-image: escape-svg($carousel-next-fill-btn);
@@ -85,7 +78,6 @@
       }
 
       .slick-prev {
-        margin-left: 11vw;
         background-image: escape-svg($carousel-prev-btn);
         &:hover {
           background-image: escape-svg($carousel-prev-fill-btn);
@@ -96,15 +88,15 @@
   }
   &.uagb-post-grid {
     ul.slick-dots {
-      top: 75.6vh;
-      @include media($until: 'sm') {
-        top: 78vh;
-      }
+      top: 87%;
       text-align: left;
       display: inline-block;
       left: 16.8vw;
       @include media($from: 'md', $until: 'xl') {
         left: 23vw;
+      }
+      @include media($from: 'sm', $until: 'md') {
+        left: 20vw;
       }
       @include media($until: 'sm') {
         left: 3vw;
