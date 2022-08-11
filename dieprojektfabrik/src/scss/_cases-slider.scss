@@ -70,6 +70,9 @@
       }
       .slick-next {
         left: toRem(15);
+        @include media($until: 'lg') {
+          left: toRem(70);
+        }
         background-image: escape-svg($carousel-next-btn);
         &:hover {
           background-image: escape-svg($carousel-next-fill-btn);
@@ -88,18 +91,28 @@
   }
   &.uagb-post-grid {
     ul.slick-dots {
-      top: 87%;
+      top: 85.3%;
       text-align: left;
       display: inline-block;
       left: 16.8vw;
-      @include media($from: 'md', $until: 'xl') {
+      @include media($from: 'lg', $until: 'xl') {
         left: 23vw;
+      }
+      @include media($from: 'md', $until: 'lg') {
+        left: 25vw;
       }
       @include media($from: 'sm', $until: 'md') {
         left: 20vw;
       }
-      @include media($until: 'sm') {
-        left: 3vw;
+      @include media($until: 'md') {
+        top: 80%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80vw;
       }
       width: inherit;
       bottom: inherit;
@@ -213,8 +226,10 @@
         left: toRem(100);
         @include media($until: 'sm') {
           left: 0;
-          padding-top: toRem(5);
+          padding-top: toRem(20);
           padding-left: 0;
+          width: 80vw;
+          right: inherit;
         }
         bottom: toRem(1);
         li {

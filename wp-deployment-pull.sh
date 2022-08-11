@@ -4,14 +4,14 @@ source .env
 set +o allexport
 
 # local
-wpContentFolderLocationLocal=www/wp-content
 migrationDbDumpFolderLocationLocal=www
+wpContentFolderLocationLocal=www/wp-content
 
 # remote
-prodServerSsh=monikazi@wink.ch
-serverRootRemote=/home/monikazi
-domainNameProduction=https://www.wink.ch/staging2
-webRootRelativeRemote=www/www.wink.ch/staging2
+prodServerSsh=daminomi@daminomi.myhostpoint.ch
+serverRootRemote=/home/daminomi
+domainNameProduction=https://daminomi.myhostpoint.ch
+webRootRelativeRemote=www/daminomi.myhostpoint.ch
 migrationDbDumpFolderLocationRemote=${serverRootRemote}/${webRootRelativeRemote}/migration
 
 wp-files_sync_plugins() {
