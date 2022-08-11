@@ -10,7 +10,7 @@
     background-image: escape-svg($nav-bg-icon);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 93vh;
+    background-size: 80vh;
   }
   .container {
     margin: toRem(60) auto toRem(80);
@@ -28,5 +28,8 @@
         }
       }
     }
+  }
+  + .wp-block-uagb-section {
+    border-top: 0;
   }
 }

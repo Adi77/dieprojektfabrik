@@ -1,6 +1,8 @@
 .images-2col-fullwidth {
   padding: 0 !important;
-  border: solid toRem(40) $white;
+  border-left: solid toRem(40) $white;
+  border-right: solid toRem(40) $white;
+  border-bottom: solid toRem(25) $white;
   @include media($until: 'sm') {
     border: solid toRem(20) $white;
   }
@@ -17,7 +19,8 @@
       }
     }
   }
-  + .wp-block-uagb-section {
+  + .wp-block-uagb-section,
+  .images-2col-fullwidth {
     border-top: 0;
   }
 }

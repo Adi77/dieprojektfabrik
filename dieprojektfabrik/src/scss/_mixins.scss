@@ -208,6 +208,7 @@ $breakpoints: (
         }
       }
       &:nth-child(4) {
+        font-family: 'Poppins SemiBold';
         position: absolute;
         top: 30px;
       }
@@ -217,12 +218,14 @@ $breakpoints: (
         bottom: 0;
         display: block;
         color: $white;
-        width: 18vw;
-        @include media($until: 'lg') {
-          width: 30vw;
+        width: 100%;
+        left: 0;
+        padding: 0 toRem(30);
+        @include media($from: 'xl') {
+          padding: 0 toRem(40);
         }
-        @include media($until: 'md') {
-          width: 82vw;
+        @include media($until: 'sm') {
+          padding: 0 toRem(20);
         }
       }
     }

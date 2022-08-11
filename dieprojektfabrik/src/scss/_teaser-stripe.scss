@@ -17,6 +17,7 @@
       }
       margin-bottom: 0;
       a {
+        font-family: 'Poppins SemiBold';
         color: $white;
         text-transform: uppercase;
         @include media($until: 'sm') {

@@ -14,6 +14,8 @@ header {
     }
   }
   .navbar-metanav {
+    font-family: 'Miso Bold';
+    letter-spacing: 1.8px;
     display: inline-block;
     padding: toRem(8) toRem(18) toRem(4);
     @include dpf-button($white, $white, 1, 20);

@@ -19,7 +19,7 @@ button {
   text-decoration: none;
   text-transform: uppercase;
   &:hover {
-    color: $black;
+    color: $orange;
     border-bottom: 1px solid $black;
   }
 }
@@ -117,6 +117,10 @@ input {
     background-color: $yellow;
   }
 }
+textarea:focus,
+input:focus {
+  outline: none;
+}
 
 /* lists in content elements */
 
@@ -129,7 +133,14 @@ ol {
       border-bottom: 2px solid $black;
       padding-bottom: toRem(15);
       margin-bottom: toRem(15);
-      //margin-right: toRem(20);
+      a {
+        font-family: 'Poppins SemiBold';
+        font-size: toRem(20);
+        text-transform: uppercase;
+        &:hover {
+          color: $orange;
+        }
+      }
     }
   }
 }

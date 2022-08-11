@@ -10,6 +10,11 @@
 
   &.uagb-section__wrap {
     padding: 0;
+    .wp-block-group {
+      &:not(:last-child) {
+        border-bottom: 2px solid $white;
+      }
+    }
   }
 
   .wp-block-columns {
@@ -36,7 +41,7 @@
           content: '';
           background-image: escape-svg($arrow-right-black);
           background-repeat: no-repeat;
-          background-position: 90% -5%;
+          background-position: 90% toRem(16);
           padding-right: 45px;
         }
       }
@@ -48,7 +53,7 @@
           content: '';
           background-image: escape-svg($arrow-right-white);
           background-repeat: no-repeat;
-          background-position: 90% -5%;
+          background-position: 90% toRem(16);
           padding-right: 45px;
         }
       }
@@ -64,7 +69,6 @@
 
   &.no-links {
     .container-fluid {
-      border-bottom: 2px solid $white;
       padding: toRem(80) 0;
       .container {
         cursor: auto;

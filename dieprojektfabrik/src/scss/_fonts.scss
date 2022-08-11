@@ -23,6 +23,18 @@
 }
 
 @font-face {
+  font-family: 'Poppins Medium';
+  src: url('../fonts/Poppins-Medium.woff') format('woff'),
+    url('../fonts/Poppins-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins Medium Italic';
+  src: url('../fonts/Poppins-MediumItalic.woff') format('woff'),
+    url('../fonts/Poppins-MediumItalic.woff2') format('woff2');
+}
+
+@font-face {
   font-family: 'Poppins Bold';
   src: url('../fonts/Poppins-Bold.woff') format('woff'),
     url('../fonts/Poppins-Bold.woff2') format('woff2');
@@ -49,13 +61,20 @@ strong {
 }
 
 h1,
-h2,
+h2 {
+  font-family: 'Miso Bold', sans-serif;
+  letter-spacing: 1.8px;
+}
+
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Miso Bold', sans-serif;
-  letter-spacing: 1.8px;
+  font-family: 'Poppins Bold';
+}
+
+p {
+  font-family: 'Poppins Medium';
 }
 
 button,

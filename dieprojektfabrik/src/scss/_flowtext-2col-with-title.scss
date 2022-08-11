@@ -6,7 +6,7 @@
   }
 
   .uagb-section__inner-wrap {
-    padding-top: toRem(80);
+    padding-top: toRem(120);
     padding-bottom: toRem(80);
     @include media($until: 'md') {
       padding-top: toRem(40);
@@ -16,6 +16,10 @@
     h3,
     h4 {
       margin-top: 0;
+    }
+    h3 {
+      font-family: 'Miso Bold';
+      font-size: toRem(60);
     }
     .container {
       @include media($until: 'sm') {
@@ -43,6 +47,12 @@
           }
         }
       }
+      &:first-child {
+        p {
+          font-family: 'Poppins Regular';
+          font-size: toRem(28);
+        }
+      }
     }
   }
   &.index-section {
@@ -57,6 +67,9 @@
         padding-right: toRem(30);
         a {
           color: $white;
+          &:hover {
+            color: $orange;
+          }
         }
         &::before {
           content: '';
@@ -66,7 +79,7 @@
           height: toRem(30);
           display: inline-block;
           right: 0;
-          margin-top: toRem(-4);
+          margin-top: toRem(-3);
         }
       }
     }

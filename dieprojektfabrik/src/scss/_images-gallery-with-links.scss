@@ -9,23 +9,27 @@
     > .row {
       .col-12 {
         border-bottom: solid toRem(20) $white;
-
-        .wp-block-cover__inner-container {
-          p {
-            font-size: toRem(20);
-            margin: 0;
-            text-transform: uppercase;
-            a {
-              color: $white;
-              &:hover {
-                border-color: $white;
+        .wp-block-cover {
+          padding: toRem(40);
+          .wp-block-cover__inner-container {
+            p {
+              font-size: toRem(20);
+              margin: 0;
+              text-transform: uppercase;
+              a {
+                font-family: 'Poppins SemiBold';
+                color: $white !important;
+                &:hover {
+                  border-color: $white;
+                  border: 0;
+                }
               }
             }
           }
         }
       }
       &:not(:last-child) {
-        margin-bottom: toRem(20);
+        margin-bottom: toRem(5);
       }
     }
   }
@@ -69,6 +73,8 @@
         padding: 0;
       }
     }
+  }
+  &.square-format {
   }
   + .wp-block-uagb-section {
     border-top: 0;
