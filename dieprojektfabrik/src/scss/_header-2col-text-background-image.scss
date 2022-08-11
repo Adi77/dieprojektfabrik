@@ -39,6 +39,17 @@
     padding-top: inherit;
     padding-bottom: inherit;
   }
+  .wp-block-columns {
+    .wp-block-column {
+      &.col-6 {
+        &:last-child {
+          //padding: 0;
+          figure {
+          }
+        }
+      }
+    }
+  }
 }
 
 /* 

@@ -78,7 +78,7 @@
     }
     > .nav-item {
       > .nav-link {
-        font-size: 7vh;
+        font-size: 6vh;
         padding-top: 0;
         padding-bottom: 0;
         @include media($until: 'xl') {
@@ -149,6 +149,21 @@
       }
     }
   }
+  @include media($from: 'lg') {
+    .col-xl-5 {
+      .navbar-nav {
+        .navbar-nav {
+          .nav-item {
+            margin-right: inherit;
+            margin-left: toRem(20);
+            @include media($until: 'sm') {
+              margin-right: toRem(10);
+            }
+          }
+        }
+      }
+    }
+  }
   &::after {
     position: absolute;
     right: toRem(-180);
@@ -164,8 +179,8 @@
     background-repeat: no-repeat;
   }
   .container {
-    padding-right: 10vw;
-    padding-left: 10vw;
+    padding-right: 6vw;
+    padding-left: 6vw;
     .row {
       > div:last-child {
         .navbar-nav {

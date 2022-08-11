@@ -24,11 +24,19 @@ $(document).ready(function ($) {
       $('.btn.btn-outline-light.navbar-metanav').show();
       $('.shrink .navbar').css('background-color', 'white');
       $('html, body').removeAttr('style');
+
+      window.setTimeout(function () {
+        $('.navbar-dark').removeClass('blackBg');
+      }, 300);
     } else {
       /* to open nav */
       $('.btn.btn-outline-light.navbar-metanav').hide();
       $('.shrink .navbar').css('background-color', 'transparent');
       $('html, body').css('overflow', 'hidden');
+
+      window.setTimeout(function () {
+        $('.navbar-dark').addClass('blackBg');
+      }, 300);
     }
     if ($('.shrink').length != 0) {
       window.setTimeout(function () {

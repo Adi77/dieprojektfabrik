@@ -28,5 +28,12 @@ header {
     @include media($until: 'sm') {
       padding-right: toRem(0);
     }
+    .navbar-dark {
+      @include media($until: 'md') {
+        &.blackBg {
+          background-color: black !important;
+        }
+      }
+    }
   }
 }

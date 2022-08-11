@@ -31,7 +31,7 @@
     a {
       color: $white;
     }
-
+    transition: background-color 0.9s ease;
     &:hover {
       background-color: $grey;
       color: $black;
