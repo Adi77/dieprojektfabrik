@@ -187,6 +187,7 @@ $breakpoints: (
       overflow: inherit;
       .uagb-post__title {
         font-family: 'Poppins Bold';
+        font-size: toRem(35);
         margin-top: toRem(40);
         a {
           font-size: inherit;

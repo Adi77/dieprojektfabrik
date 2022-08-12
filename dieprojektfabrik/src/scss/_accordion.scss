@@ -11,6 +11,8 @@
       h4 {
         font-family: 'Poppins Bold';
         padding: 0;
+        margin-top: toRem(23);
+        margin-bottom: toRem(32);
         &::after {
           content: '';
           background-image: escape-svg($accordion-plus-circle-btn);
@@ -22,7 +24,6 @@
       }
       p {
         font-family: 'Poppins Medium';
-        margin-top: toRem(10);
       }
       padding: toRem(20) toRem(20) toRem(10);
       &:not(:last-child) {

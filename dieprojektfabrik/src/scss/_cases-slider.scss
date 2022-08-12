@@ -9,6 +9,7 @@
   padding: inherit;
   .uagb-post__inner-wrap {
     height: 90vh;
+
     padding: 36vh 20vw 0 11vw;
 
     .uagb-post__image {
@@ -18,6 +19,12 @@
       }
     }
     .uagb-post__title {
+      font-family: 'Miso Bold';
+      font-size: toRem(90);
+      @include media($until: 'lg') {
+        font-size: toRem(65);
+      }
+      line-height: 1.2;
       a {
         color: $white;
         &:hover {

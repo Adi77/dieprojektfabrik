@@ -52,7 +52,7 @@ h3 {
 }
 
 h1 {
-  font-size: toRem(85);
+  font-size: toRem(90);
   @include media($from: 'sm', $until: 'lg') {
     font-size: toRem(65);
   }
@@ -63,7 +63,7 @@ h1 {
   margin-bottom: toRem(40);
 }
 h2 {
-  font-size: toRem(66);
+  font-size: toRem(60);
   @include media($until: 'sm') {
     font-size: toRem(40);
   }
@@ -75,8 +75,8 @@ h3 {
   margin-bottom: toRem(30);
 }
 h4 {
-  font-size: toRem(25);
-
+  font-size: toRem(22);
+  margin-bottom: toRem(40);
   a {
     text-transform: none;
   }

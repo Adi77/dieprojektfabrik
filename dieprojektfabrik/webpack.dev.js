@@ -37,9 +37,9 @@ module.exports = {
     ],
   },
   cache: true,
-  experiments: {
-    lazyCompilation: true,
-  },
+  // experiments: {
+  //   lazyCompilation: true,
+  // },
   devtool: 'eval-cheap-source-map',
   devServer: {
     port: 8080,
@@ -50,7 +50,7 @@ module.exports = {
     static: {
       directory: path.resolve(process.cwd(), 'dist'),
     },
-    compress: true,
+    compress: false,
     hot: true,
     allowedHosts: 'all',
   },

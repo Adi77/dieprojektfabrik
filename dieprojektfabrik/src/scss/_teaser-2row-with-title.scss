@@ -1,4 +1,5 @@
 .teaser-2row-width-title {
+  h1,
   h2,
   h3,
   h4 {
@@ -7,13 +8,17 @@
   h4 {
     margin-bottom: toRem(40);
   }
+  p {
+    font-family: 'Poppins Regular';
+    font-size: toRem(28);
+  }
   background-color: $lightgrey;
   border: solid toRem(40) $white;
   @include media($until: 'sm') {
     border: solid toRem(20) $white;
   }
   .container {
-    margin: toRem(100) auto toRem(60);
+    margin: toRem(100) auto;
     @include media($from: 'lg', $until: 'lg') {
       margin: toRem(30) auto toRem(30);
     }
@@ -28,6 +33,7 @@
           margin-top: 0;
         }
         &:last-child {
+          h1,
           h2 {
             &.has-text-color {
               margin-bottom: 0;
