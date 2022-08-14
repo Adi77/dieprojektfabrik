@@ -188,7 +188,7 @@ $breakpoints: (
       .uagb-post__title {
         font-family: 'Poppins Bold';
         font-size: toRem(35);
-        margin-top: toRem(40);
+
         a {
           font-size: inherit;
           color: $white;
@@ -198,6 +198,7 @@ $breakpoints: (
         }
       }
       .uagb-post__excerpt {
+        margin-bottom: toRem(40);
         @include media($until: 'sm') {
           margin-right: toRem(50);
         }
@@ -208,10 +209,11 @@ $breakpoints: (
           font-size: toRem(16);
         }
       }
+      &:nth-child(2) {
+        margin-bottom: toRem(25);
+      }
       &:nth-child(4) {
         font-family: 'Poppins SemiBold';
-        position: absolute;
-        top: 30px;
       }
       &:last-child {
         position: absolute;

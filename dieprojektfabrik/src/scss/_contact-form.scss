@@ -67,6 +67,7 @@
       } */
       input[type='submit'] {
         @include dpf-button($black, $yellow, 0, 50);
+        font-size: toRem(16);
         margin-top: toRem(40);
         padding: toRem(10) toRem(20) toRem(6);
       }
