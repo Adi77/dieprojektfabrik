@@ -36,19 +36,14 @@
       &:hover {
         color: $black !important;
       }
-    }
-    &:nth-child(1) {
-      .wp-block-button__link {
+      @include dpf-button($black, $yellow, 0, 50, 0);
+      &.has-green-background-color {
         @include dpf-button($black, $green, 0, 50, 0);
       }
-    }
-    &:nth-child(2) {
-      .wp-block-button__link {
+      &.has-orange-background-color {
         @include dpf-button($black, $orange, 0, 50, 0);
       }
-    }
-    &:nth-child(3) {
-      .wp-block-button__link {
+      &.has-yellow-background-color {
         @include dpf-button($black, $yellow, 0, 50, 0);
       }
     }

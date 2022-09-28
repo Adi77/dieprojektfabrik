@@ -20,7 +20,6 @@ button {
   text-transform: uppercase;
   &:hover {
     color: $orange;
-    border-bottom: 1px solid $black;
   }
 }
 
@@ -29,21 +28,6 @@ button {
 /* text formatting */
 
 /* headings  */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  a {
-    color: $white;
-    &:hover {
-      color: $white;
-      border: 0;
-    }
-  }
-}
 
 h1,
 h2,
@@ -100,6 +84,19 @@ blockquote {
 p {
   font-size: toRem(20);
   margin-bottom: toRem(40);
+}
+
+section {
+  .wp-block-column {
+    p {
+      a {
+        border-bottom: 2px solid $black;
+        &:hover {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
 }
 
 /* forms */
