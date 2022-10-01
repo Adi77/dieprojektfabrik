@@ -42,9 +42,6 @@
       padding: 0 15%;
     }
     .wp-block-columns {
-      &:last-child {
-        // @include make-col(10, 8);
-      }
       .wp-block-cover {
         padding: 0;
         @include media($until: 'xl') {
