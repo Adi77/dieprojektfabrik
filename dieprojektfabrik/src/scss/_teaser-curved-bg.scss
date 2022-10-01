@@ -1,56 +1,63 @@
 .teaser-curved-bg {
+  @include media($from: 'lg') {
+    padding: 0 !important;
+  }
   border: solid 2.5rem white;
   @include media($until: 'sm') {
     border: solid 1.2rem white;
   }
 
-  .container-lg {
-    @include media($until: 'xl') {
-      padding: 0;
-    }
+  .uagb-section__inner-wrap {
+    overflow: hidden;
+    .container-lg {
+      @include media($until: 'xl') {
+        padding: 0;
+      }
 
-    .wp-block-group__inner-container {
-      .wp-block-columns {
-        .wp-block-column {
-          .wp-block-button__link {
-            @include dpf-button($white, $black, 0, 50);
-          }
-          .wp-block-image {
-            @include media($until: 'xl') {
-              margin-left: -19px;
-              margin-right: -19px;
+      .wp-block-group__inner-container {
+        .wp-block-columns {
+          .wp-block-column {
+            .wp-block-button__link {
+              @include dpf-button($white, $black, 0, 50);
             }
+            .wp-block-image {
+              @include media($until: 'xl') {
+                margin-left: -19px;
+                margin-right: -19px;
+              }
 
-            img {
-              @include media($from: 'lg') {
-                position: absolute;
-                right: -20px;
-                top: 0;
-                height: 100%;
-                bottom: 0;
-                margin: inherit;
-                //object-fit: cover;
-                z-index: 1;
-                width: auto;
+              img {
+                @include media($from: 'lg') {
+                  position: absolute;
+                  right: -50%;
+                  top: 0;
+                  height: auto;
+                  bottom: 0;
+                  margin: inherit;
+                  //object-fit: cover;
+                  z-index: 1;
+                  width: 100%;
+                }
               }
             }
-          }
-          &:first-child {
-            z-index: 1;
-            padding: toRem(80) toRem(20) toRem(80) 0;
+            &:first-child {
+              z-index: 1;
+              padding: toRem(80) toRem(20) toRem(80) 0;
 
-            @include media($until: 'sm') {
-              padding-left: toRem(20);
-            }
+              @include media($until: 'sm') {
+                padding-left: toRem(20);
+              }
 
-            @include media($from: 'sm', $until: 'xl') {
-              padding-left: toRem(25);
+              @include media($from: 'sm', $until: 'xl') {
+                padding-left: toRem(25);
+              }
             }
           }
         }
       }
     }
   }
+
   &.quote {
     blockquote {
       p {
