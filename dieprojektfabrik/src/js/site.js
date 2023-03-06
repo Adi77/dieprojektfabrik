@@ -46,9 +46,10 @@ $(document).ready(function ($) {
   });
   /* make click available on whole teaser stripe */
   $(
-    '.teaser-stripe, .teaser-stripe-title-text-with-hover:not(.no-links), .wp-block-cover'
+    '.teaser-stripe, .teaser-stripe-title-text-with-hover:not(.no-links) .uagb-section__inner-wrap .wp-block-group, .wp-block-cover'
   ).on('click', function (e) {
     if ($(this).find('a').attr('href').length != 0) {
+      //console.log($(this).find('a').attr('href'));
       window.location.href = $(this).find('a').attr('href');
       $(this).css('cursor', 'pointer');
     }
