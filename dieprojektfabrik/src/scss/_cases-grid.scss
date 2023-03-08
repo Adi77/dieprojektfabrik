@@ -31,6 +31,22 @@
       }
     }
   }
+  .uagb-post__image-position-background {
+    .uagb-post__image {
+      img {
+        position: absolute;
+        width: auto;
+        height: 400px;
+        min-width: 100%;
+        max-width: none;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        min-height: 100%;
+      }
+    }
+  }
+
   &.uagb-section__wrap {
     padding-left: 11px;
     padding-right: 11px;
