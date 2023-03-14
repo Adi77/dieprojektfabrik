@@ -8,7 +8,7 @@
   }
   padding: inherit;
   .uagb-post__inner-wrap {
-    height: 90vh;
+    height: 76vh;
 
     padding: 36vh 20vw 0 11vw;
 
@@ -21,8 +21,11 @@
     .uagb-post__title {
       font-family: 'Miso Bold';
       font-size: toRem(90);
-      @include media($until: 'lg') {
+      @include media($until: 'xl') {
         font-size: toRem(65);
+      }
+      @include media($until: 'sm') {
+        font-size: toRem(40);
       }
       line-height: 1.2;
       a {
@@ -174,6 +177,10 @@
     @include media($until: 'sm') {
       margin: toRem(60) auto toRem(100);
       padding: toRem(5);
+    }
+    h3 {
+      font-size: toRem(22);
+      text-transform: none;
     }
   }
   .uagb-slick-carousel {

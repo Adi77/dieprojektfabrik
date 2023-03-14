@@ -11,6 +11,10 @@
   &.uagb-section__wrap {
     padding: 0;
     .wp-block-group {
+      @include media($until: 'sm') {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
       &:not(:last-child) {
         border-bottom: 2px solid $white;
       }
@@ -18,16 +22,37 @@
   }
 
   .container-fluid {
-    padding: toRem(80) 0;
-    h3,
-    h4,
-    h2,
-    p {
-      margin: 0;
+    padding: 80px 0;
+    @include media($until: 'sm') {
+      padding: 25px 0;
     }
-    a {
-      color: $white;
+    .container {
+      @include media($from: 'xxl', $until: 1535px) {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      h3 {
+        font-family: 'Miso Bold';
+        letter-spacing: 3px;
+        @include media($until: 'sm') {
+          margin-bottom: 20px;
+        }
+      }
+      p {
+        margin-bottom: 20px;
+        @include media($until: 'sm') {
+          margin-bottom: 15px;
+        }
+      }
+      a {
+        color: $white;
+      }
+      .wp-block-buttons {
+        margin-top: 30px;
+      }
     }
+
     transition: background-color 0.9s ease;
     &:hover {
       background-color: $grey;
@@ -38,7 +63,11 @@
           content: '';
           background-image: escape-svg($arrow-right-black);
           background-repeat: no-repeat;
-          background-position: 90% toRem(16);
+          background-position: 90% 0;
+          @include media($until: 'sm') {
+            background-position: 90% -7px;
+          }
+
           padding-right: 45px;
         }
       }
@@ -50,7 +79,10 @@
           content: '';
           background-image: escape-svg($arrow-right-white);
           background-repeat: no-repeat;
-          background-position: 90% toRem(16);
+          background-position: 90% 0;
+          @include media($until: 'sm') {
+            background-position: 90% -7px;
+          }
           padding-right: 45px;
         }
       }
@@ -65,14 +97,28 @@
   }
 
   &.no-links {
+    cursor: default;
     .container-fluid {
-      padding: toRem(80) 0;
+      padding: 80px 0;
+      @include media($until: 'sm') {
+        padding: 28px 0;
+      }
       .container {
         cursor: auto;
+        @include media($from: 'xxl', $until: 1535px) {
+          padding-left: 40px;
+          padding-right: 40px;
+        }
       }
       &:hover {
         color: inherit;
         background-color: inherit;
+        cursor: default;
+        a {
+          &::after {
+            padding-right: 0;
+          }
+        }
       }
     }
   }

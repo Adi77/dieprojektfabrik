@@ -49,7 +49,6 @@ $(document).ready(function ($) {
     '.teaser-stripe, .teaser-stripe-title-text-with-hover:not(.no-links) .uagb-section__inner-wrap .wp-block-group, .wp-block-cover'
   ).on('click', function (e) {
     if ($(this).find('a').attr('href').length != 0) {
-      //console.log($(this).find('a').attr('href'));
       window.location.href = $(this).find('a').attr('href');
       $(this).css('cursor', 'pointer');
     }
@@ -67,6 +66,18 @@ $(document).ready(function ($) {
 
   /* cssonly carousel for portfolio items */
   //$.fn.portfolioCarousel();
+
+  /*
+   * case or blog detail page - get intro text height
+   */
+  /*   var x = window.matchMedia('(max-width: 480px)');
+  if (x.matches) {
+    let introTextEl = $(
+      '.header-2col-text-background-image .uagb-section__inner-wrap .wp-block-columns .wp-block-column '
+    );
+    let introTextElHeight = introTextEl.height();
+    introTextEl.css('margin-bottom', introTextElHeight);
+  } */
 });
 
 /* cssonly carousel for portfolio items */

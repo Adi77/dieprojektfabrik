@@ -17,14 +17,10 @@
     h4 {
       margin-top: 0;
     }
-    h3 {
-      font-family: 'Miso Bold';
-      font-size: toRem(60);
-    }
+
     .container {
       @include media($until: 'sm') {
-        padding: toRem(5);
-        margin: toRem(60) auto toRem(60);
+        padding: inherit;
       }
       &.subtitle {
         margin-top: toRem(60);
@@ -44,13 +40,23 @@
                 }
               }
             }
+            &:not(.col-xs-12) {
+              @include media($until: 'sm') {
+                margin-bottom: 40px;
+              }
+            }
+          }
+          @include media($until: 'sm') {
+            margin-bottom: 0;
+            &:not(:last-child) {
+              margin-bottom: 40px;
+            }
           }
         }
       }
       &:first-child {
         p {
           font-family: 'Poppins Regular';
-          font-size: toRem(28);
         }
       }
     }
@@ -86,5 +92,15 @@
   }
   + .wp-block-uagb-section {
     border-top: 0;
+  }
+}
+
+.single-case,
+.single-post {
+  .flowtext-2col-with-title {
+    h3 {
+      font-size: toRem(22);
+      text-transform: none;
+    }
   }
 }

@@ -12,16 +12,19 @@
     > .row {
       border-bottom: 2px solid $white;
       > .wp-block-column {
-        padding: toRem(40) toRem(120) 0;
+        padding: 40px 70px 0;
         @include media($until: 'xxl') {
-          padding: toRem(40) toRem(40) 0;
+          padding: 40px 40px 0;
         }
 
         @include media($until: 'xl') {
-          padding: toRem(40) toRem(60) 0;
+          padding: 40px 60px 0;
           p {
             text-align: left;
           }
+        }
+        @include media($until: 'sm') {
+          padding: 40px;
         }
         &:first-child {
           border-right: 2px solid $white;

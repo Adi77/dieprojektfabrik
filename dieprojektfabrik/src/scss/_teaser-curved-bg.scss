@@ -42,10 +42,10 @@
             }
             &:first-child {
               z-index: 1;
-              padding: toRem(80) toRem(20) toRem(80) 0;
+              padding: 80px 20px 80px 0;
 
               @include media($until: 'sm') {
-                padding-left: toRem(20);
+                padding: 20px;
               }
 
               @include media($from: 'sm', $until: 'xl') {
@@ -63,6 +63,9 @@
       p {
         font-family: 'Miso Bold', sans-serif;
         font-size: toRem(45);
+        @include media($until: 'sm') {
+          font-size: toRem(25);
+        }
       }
     }
   }

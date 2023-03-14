@@ -188,7 +188,10 @@ $breakpoints: (
       .uagb-post__title {
         font-family: 'Poppins Bold';
         font-size: toRem(35);
-        @include media($until: 'xxl') {
+        @include media($until: 'sm') {
+          font-size: toRem(20);
+        }
+        @include media($from: 'sm', $until: 'xxl') {
           font-size: toRem(25);
         }
         a {

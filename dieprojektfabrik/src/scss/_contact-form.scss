@@ -1,9 +1,10 @@
 .contact-form {
   background-color: $lightgrey;
   border: solid 2.5rem white;
-  padding: toRem(80) 0 toRem(80) !important;
+  padding: 80px 0 80px !important;
   @include media($until: 'sm') {
     border: solid 1.2rem white;
+    padding: 20px 20px 0 !important;
   }
 
   .wp-block-column {
@@ -70,10 +71,17 @@
         font-size: toRem(16);
         margin-top: toRem(40);
         padding: toRem(10) toRem(20) toRem(6);
+        @include media($until: 'sm') {
+          margin-top: toRem(20);
+        }
+        white-space: break-spaces;
       }
       .upload-info {
         padding: toRem(60) toRem(20) toRem(20);
         font-size: toRem(14);
+        @include media($until: 'sm') {
+          padding: toRem(20) toRem(20) toRem(20);
+        }
       }
       label {
         margin-left: toRem(20);

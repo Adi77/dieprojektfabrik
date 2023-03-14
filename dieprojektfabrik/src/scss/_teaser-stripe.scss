@@ -11,9 +11,10 @@
       @include media($until: 'sm') {
         text-align: left;
       }
-      padding-top: toRem(28);
+      padding-top: 28px;
       @include media($until: 'sm') {
-        padding-top: toRem(18);
+        padding-top: 16px;
+        padding-left: 10px;
       }
       margin-bottom: 0;
       a {

@@ -40,10 +40,16 @@
     img {
       object-fit: unset;
       padding: 0 15%;
+      background-color: $white;
     }
     .wp-block-columns {
+      @include media($until: 'xl') {
+        margin-left: 0;
+        margin-right: 0;
+      }
       .wp-block-cover {
         padding: 0;
+        margin-bottom: 25px;
         @include media($until: 'xl') {
           min-height: toRem(160);
         }
@@ -56,11 +62,25 @@
     .uagb-section__inner-wrap {
       padding-top: 5rem;
       padding-bottom: 5rem;
+      @include media($until: 'sm') {
+        padding: 0;
+      }
       .row {
         .col-12 {
           &:first-child {
             @include media($until: 'md') {
               border-bottom: 0;
+            }
+          }
+        }
+      }
+      .wp-block-group {
+        &:first-child {
+          .wp-block-group__inner-container {
+            .wp-block-column {
+              @include media($until: 'sm') {
+                padding: 0;
+              }
             }
           }
         }

@@ -2,11 +2,14 @@
   padding: 0 !important;
   border: solid toRem(40) $white;
   @include media($until: 'sm') {
-    border: solid toRem(20) $white;
+    border: 0;
   }
   .col-12 {
     @include media($until: 'md') {
       border-bottom: solid toRem(20) $white;
+    }
+    @include media($until: 'sm') {
+      border-bottom: solid toRem(20) transparent;
     }
 
     .wp-block-cover {
