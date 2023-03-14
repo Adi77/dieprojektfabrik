@@ -101,7 +101,7 @@ wp-files_sync() {
 wp-database_sync() {
     echo "******* Do you wish to export db-dump to ${migrationDbDumpFolderLocationRemote}/$DB_NAME.sql.gz File and download it?"
     SCRIPT="cd ${migrationDbDumpFolderLocationRemote}
-            php ${serverRootRemote}/wp-cli.phar db export --add-drop-table - | gzip >${migrationDbDumpFolderLocationRemote}/$DB_NAME.sql.gz"
+            wp db export --add-drop-table - | gzip >${migrationDbDumpFolderLocationRemote}/$DB_NAME.sql.gz"
     select yn in "Yes" "No"; do
         case $yn in
         Yes)
@@ -120,10 +120,11 @@ wp-database_sync() {
         select yn in "Yes" "No"; do
             case $yn in
             Yes)
-                gunzip -k ${migrationDbDumpFolderLocationLocal}/$DB_NAME.sql.gz
-                docker-compose run --rm wpcli db import <${migrationDbDumpFolderLocationLocal}/$DB_NAME.sql
+                cd ${migrationDbDumpFolderLocationLocal}
+                gunzip -k $DB_NAME.sql.gz
+                docker-compose run --rm wpcli db import <$DB_NAME.sql
                 docker-compose run --rm wpcli search-replace ${domainNameProduction} 'http://'$VIRTUAL_HOST --skip-columns=guid --skip-tables=wp_users
-                rm ${migrationDbDumpFolderLocationLocal}/$DB_NAME.sql
+                rm $DB_NAME.sql
                 break
                 ;;
             No) exit ;;

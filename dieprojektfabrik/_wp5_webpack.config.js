@@ -1,6 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
+
+const glob = require('glob');
+const PurgeCSSPlugin = require('purgecss-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -21,12 +24,8 @@ module.exports = merge(
     output: {
       filename: '[name].js',
       path: path.resolve(__dirname, 'dist/'),
+      library: '[name]_dll',
     },
-    // optimization: {
-    //   splitChunks: {
-    //     chunks: 'all',
-    //   },
-    // },
     module: {
       rules: [
         {
@@ -36,11 +35,19 @@ module.exports = merge(
         },
       ],
     },
-    //cache: { type: 'filesystem' },
     plugins: [
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
+      }),
+      new PurgeCSSPlugin({
+        paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+        only: ['scss'],
+      }),
+      new webpack.DllReferencePlugin({
+        context: __dirname,
+        name: '[name]_dll',
+        manifest: path.join(__dirname, 'dist/', 'vendor-manifest.json'),
       }),
     ],
   },

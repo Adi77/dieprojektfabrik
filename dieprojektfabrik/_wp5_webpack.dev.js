@@ -1,5 +1,5 @@
-// Achtung!! Funktioniert nur mit node version 14.21.3
 const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   output: {
@@ -9,12 +9,10 @@ module.exports = {
     rules: [
       {
         test: /\.(c|sa|sc)ss$/,
+        include: path.resolve(__dirname, 'src'),
         use: [
           {
             loader: 'style-loader',
-            options: {
-              sourceMap: true,
-            },
           },
           {
             loader: 'css-loader',
@@ -31,44 +29,42 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              implementation: require('sass'),
               sourceMap: true,
-              sassOptions: {
-                outputStyle: 'expanded',
-              },
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'dist/',
             },
           },
         ],
       },
     ],
   },
+  cache: true,
+  // experiments: {
+  //   lazyCompilation: true,
+  // },
+  devtool: 'eval-cheap-source-map',
   devServer: {
     port: 8080,
     host: '0.0.0.0', // this lets the server listen for requests from the lan network, not just localhost.
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
-    compress: true,
+    static: {
+      directory: path.resolve(process.cwd(), 'dist'),
+    },
+    compress: false,
     hot: true,
-    inline: true,
-    stats: 'errors-only',
-    overlay: true,
-    disableHostCheck: true,
+    allowedHosts: 'all',
   },
-  plugins: [
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+  performance: {
+    hints: false,
+  },
+  output: {
+    pathinfo: false,
+  },
+  optimization: {
+    //runtimeChunk: true,
+    removeAvailableModules: false,
+    removeEmptyChunks: false,
+    splitChunks: false,
+  },
+  //plugins: [new webpack.HotModuleReplacementPlugin()],
 };
