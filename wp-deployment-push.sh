@@ -137,8 +137,8 @@ wp-database_sync() {
     echo "******* Do you wish to import db-dump to DB on Production Server?"
     SCRIPT="gunzip -k ${migrationDbDumpFolderLocationRemote}/$DB_NAME.sql.gz;
     cd ${migrationDbDumpFolderLocationRemote}
-    php ${serverRootRemote}/wp-cli.phar db import $DB_NAME.sql
-    php ${serverRootRemote}/wp-cli.phar search-replace 'http://'$VIRTUAL_HOST '${domainNameProduction}' --skip-columns=guid --skip-tables=wp_users
+    wp db import $DB_NAME.sql
+    wp search-replace 'http://'$VIRTUAL_HOST '${domainNameProduction}' --skip-columns=guid --skip-tables=wp_users
     rm $DB_NAME.sql
     "
     select yn in "Yes" "No"; do
