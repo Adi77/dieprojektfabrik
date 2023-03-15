@@ -162,7 +162,7 @@ ol {
 }
 
 /* pages with white header set black logo and hamburger */
-.page-id-12,
+.page-id-12, // Projekte Page
 .single-case,
 .single-post {
   .navbar {
@@ -202,7 +202,7 @@ ol {
   h4 {
     margin-bottom: 10px;
     @include media($until: 'sm') {
-      margin-top: 40px;
+      margin-top: 60px;
     }
   }
 }
