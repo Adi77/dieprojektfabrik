@@ -95,10 +95,10 @@
   }
   .header-2col-text-background-image {
     /* iphone se */
-    @include media($until: 376) {
+    /*     @include media($until: 376) {
       background-position: 0 100vh;
       height: 130vh;
-    }
+    } */
 
     background-attachment: scroll;
     background-repeat: no-repeat;
