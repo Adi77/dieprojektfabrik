@@ -1,22 +1,24 @@
 .images-1col-fullwidth {
   padding: 0 !important;
-  border: solid toRem(40) $white;
-  @include media($until: 'sm') {
+  // border: solid 40px $white;
+  border-bottom: 20px solid transparent;
+  @include media($until: 'lg') {
     border: 0;
+    border-bottom: 20px solid transparent;
   }
   .col-12 {
     @include media($until: 'md') {
-      border-bottom: solid toRem(20) $white;
+      border-bottom: solid 20px transparent;
     }
     @include media($until: 'sm') {
-      border-bottom: solid toRem(20) transparent;
+      border-bottom: solid 20px transparent;
     }
 
     .wp-block-cover {
-      min-height: toRem(730);
+      min-height: 730px;
       .wp-block-cover__inner-container {
         p {
-          font-size: toRem(20);
+          font-size: 20px;
           margin: 0;
         }
       }

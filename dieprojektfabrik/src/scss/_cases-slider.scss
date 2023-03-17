@@ -103,6 +103,13 @@
   &.uagb-post-grid {
     ul.slick-dots {
       top: 85.3%;
+      /*       bottom: 90px !important;
+      @include media($from: 'sm', $until: 'lg') {
+        bottom: 93.5px !important;
+      }
+      @include media($from: 'lg', $until: 'xl') {
+        bottom: 119px !important;
+      } */
       text-align: left;
       display: inline-block;
       left: 16.8vw;

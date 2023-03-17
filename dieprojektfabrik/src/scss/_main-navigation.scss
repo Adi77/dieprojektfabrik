@@ -175,13 +175,13 @@
       }
     }
   }
-  @include media($from: 'lg') {
+  @include media($from: 'xl') {
     .col-xl-5 {
       .navbar-nav {
         .navbar-nav {
           .nav-item {
             margin-right: inherit;
-            margin-left: toRem(20);
+            margin-left: 20px;
             @include media($until: 'sm') {
               margin-right: toRem(10);
             }

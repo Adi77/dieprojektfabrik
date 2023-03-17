@@ -37,7 +37,7 @@ h3 {
 
 h1 {
   font-size: toRem(90);
-  @include media($from: 'sm', $until: 'xl') {
+  @include media($from: 'sm', $until: 'xxl') {
     font-size: toRem(65);
   }
   @include media($until: 'sm') {
