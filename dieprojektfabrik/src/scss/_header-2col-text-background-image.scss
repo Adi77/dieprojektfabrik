@@ -1,12 +1,20 @@
 .header-2col-text-background-image {
   color: white;
   height: 90vh;
+  background-position: top right;
+  background-size: auto;
   @include media($until: 'lg') {
+    padding-bottom: 600px !important;
+    background-position: center 600px !important;
+
     height: inherit;
-    p {
-      margin: 0;
-    }
   }
+
+  @include media($until: 'sm') {
+    background-size: contain;
+    background-position: bottom;
+  }
+
   .container {
     @include media($until: 'sm') {
       padding: 14vh 0 0;
@@ -94,21 +102,6 @@
 
     background-attachment: scroll;
     background-repeat: no-repeat;
-
-    background-size: auto;
-
-    background-position: top right;
-
-    @include media($until: 'lg') {
-      padding-bottom: 505px !important;
-      background-position: center 600px !important;
-      // background-size: contain !important;
-    }
-
-    @include media($until: 'sm') {
-      background-size: contain;
-      background-position: bottom;
-    }
 
     .uagb-section__overlay {
       background-color: $white;

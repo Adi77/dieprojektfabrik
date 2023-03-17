@@ -16,7 +16,12 @@
         @include media($until: 'xxl') {
           padding: 40px 40px 0;
         }
-
+        p {
+          font-size: toRem(20);
+          strong {
+            font-family: 'Poppins SemiBold';
+          }
+        }
         @include media($until: 'xl') {
           padding: 40px 60px 0;
           p {
@@ -24,12 +29,25 @@
           }
         }
         @include media($until: 'sm') {
-          padding: 40px;
+          padding: 30px 15px;
         }
         &:first-child {
           border-right: 2px solid $white;
           @include media($until: 'md') {
             border-bottom: 2px solid $white;
+          }
+        }
+        .wp-block-group {
+          &.container {
+            .wp-block-group__inner-container {
+              .wp-block-columns {
+                .wp-block-column {
+                  &:first-child {
+                    text-transform: uppercase;
+                  }
+                }
+              }
+            }
           }
         }
       }

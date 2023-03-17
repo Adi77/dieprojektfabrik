@@ -12,8 +12,8 @@
     padding: 0;
     .wp-block-group {
       @include media($until: 'sm') {
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 13px;
+        padding-right: 13px;
       }
       &:not(:last-child) {
         border-bottom: 2px solid $white;
@@ -98,6 +98,14 @@
 
   &.no-links {
     cursor: default;
+    &.uagb-section__wrap {
+      .wp-block-group {
+        @include media($until: 'sm') {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    }
     .container-fluid {
       padding: 80px 0;
       @include media($until: 'sm') {

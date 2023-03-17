@@ -70,13 +70,17 @@ $(document).ready(function ($) {
   /*
    * case or blog detail page - get intro text height
    */
-  /*   var x = window.matchMedia('(max-width: 480px)');
+  /*   var x = window.matchMedia('(max-width: 991px)');
   if (x.matches) {
     let introTextEl = $(
       '.header-2col-text-background-image .uagb-section__inner-wrap .wp-block-columns .wp-block-column '
     );
     let introTextElHeight = introTextEl.height();
-    introTextEl.css('margin-bottom', introTextElHeight);
+    console.log(introTextElHeight);
+    $('.header-2col-text-background-image').css({
+      'background-position': 'center ' + 124 + '%',
+      'padding-bottom': +introTextElHeight + 'px',
+    });
   } */
 });
 
