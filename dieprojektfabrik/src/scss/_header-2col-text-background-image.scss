@@ -4,15 +4,20 @@
   background-position: top right;
   background-size: auto;
   @include media($until: 'lg') {
-    padding-bottom: 600px !important;
-    background-position: center 600px !important;
-
+    padding-bottom: 350px !important;
+    //background-position: center 350px !important;
+    background-size: contain;
+    background-position: bottom;
     height: inherit;
   }
 
-  @include media($until: 'sm') {
-    background-size: contain;
-    background-position: bottom;
+  @include media($from: 'sm', $until: 'md') {
+    padding-bottom: 450px !important;
+    background-position: center 450px !important;
+  }
+  @include media($from: 'md', $until: 'lg') {
+    padding-bottom: 500px !important;
+    background-position: center 500px !important;
   }
 
   .container {
@@ -50,8 +55,10 @@
     }
   }
   &.uagb-section__wrap {
-    padding-top: inherit;
-    padding-bottom: inherit;
+    @include media($from: 'lg') {
+      padding-top: inherit;
+      padding-bottom: inherit;
+    }
   }
   @include media($until: 'sm') {
     .uagb-section__inner-wrap {
@@ -110,6 +117,9 @@
       width: 100%;
       .wp-block-columns {
         .wp-block-column {
+          @include media($until: 'lg') {
+            background-color: $white;
+          }
           p {
             color: $black;
           }

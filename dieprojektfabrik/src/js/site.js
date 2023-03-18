@@ -70,18 +70,37 @@ $(document).ready(function ($) {
   /*
    * case or blog detail page - get intro text height
    */
-  /*   var x = window.matchMedia('(max-width: 991px)');
-  if (x.matches) {
-    let introTextEl = $(
+  //var x = window.matchMedia('(max-width: 991px)');
+  //if (x.matches) {
+  /*     let introTextEl = $(
       '.header-2col-text-background-image .uagb-section__inner-wrap .wp-block-columns .wp-block-column '
     );
     let introTextElHeight = introTextEl.height();
-    console.log(introTextElHeight);
+
     $('.header-2col-text-background-image').css({
       'background-position': 'center ' + 124 + '%',
       'padding-bottom': +introTextElHeight + 'px',
-    });
-  } */
+    }); */
+  /*     let image_url = $('.header-2col-text-background-image').css(
+        'background-image'
+      ),
+      image;
+
+    // Remove url() or in case of Chrome url("")
+    image_url = image_url.match(/^url\("?(.+?)"?\)$/);
+
+    if (image_url[1]) {
+      image_url = image_url[1];
+      image = new Image();
+
+      // just in case it is not already loaded
+      image.onload = function () {
+        console.log(this.width + 'x' + this.height);
+      };
+
+      image.src = image_url;
+    } */
+  // }
 });
 
 /* cssonly carousel for portfolio items */
