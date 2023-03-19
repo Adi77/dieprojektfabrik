@@ -10,7 +10,7 @@
   .uagb-post__inner-wrap {
     height: 76vh;
 
-    padding: 36vh 20vw 0 11vw;
+    padding: 30vh 20vw 0 11vw;
 
     .uagb-post__image {
       &::before {
@@ -123,7 +123,6 @@
         left: 20vw;
       }
       @include media($until: 'md') {
-        top: 80%;
         left: 0;
         right: 0;
         text-align: center;
