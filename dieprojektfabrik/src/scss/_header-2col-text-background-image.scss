@@ -8,8 +8,10 @@
     background-size: contain !important;
     background-position: bottom;
     height: inherit;
-    padding-bottom: 300px !important;
     background-position: center bottom !important;
+  }
+  @include media($until: 'sm') {
+    padding-bottom: 274px !important;
   }
   @include media($from: 'sm', $until: 'lg') {
     padding-bottom: 400px !important;
