@@ -14,8 +14,8 @@
 
     .uagb-post__image {
       &::before {
-        background-color: transparent;
-        opacity: 1;
+        background-color: $black;
+        opacity: 0.3;
       }
     }
     .uagb-post__title {
