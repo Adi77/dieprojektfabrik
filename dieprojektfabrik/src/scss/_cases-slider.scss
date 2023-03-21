@@ -194,7 +194,6 @@
     }
     &.uagb-post-grid {
       ul.slick-dots {
-        bottom: 90px !important;
         @include media($from: 'sm', $until: 'lg') {
           bottom: 100px !important;
         }
