@@ -58,6 +58,9 @@
       .slick-prev {
         top: 90%;
         margin-left: 11%;
+        @include media($from: 'lg', $until: 'xl') {
+          margin-left: 16%;
+        }
         right: inherit;
         @include media($until: 'md') {
           display: none !important;
@@ -164,6 +167,36 @@
               border: 0;
             }
           }
+        }
+      }
+    }
+  }
+}
+
+.post-type-page {
+  > .uagb-slick-carousel {
+    overflow: hidden !important;
+    @include media($from: 'sm') {
+      height: 735px !important;
+    }
+    &.uagb-post__arrow-outside {
+      button {
+        @include media($from: 'sm', $until: 'lg') {
+          top: 89% !important;
+        }
+        @include media($from: 'lg', $until: 'xl') {
+          top: 88% !important;
+        }
+      }
+    }
+    &.uagb-post-grid {
+      ul.slick-dots {
+        bottom: 90px !important;
+        @include media($from: 'sm', $until: 'lg') {
+          bottom: 100px !important;
+        }
+        @include media($from: 'lg', $until: 'xl') {
+          bottom: 119px !important;
         }
       }
     }
