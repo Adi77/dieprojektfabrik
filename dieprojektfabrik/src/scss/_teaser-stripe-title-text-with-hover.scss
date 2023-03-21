@@ -75,13 +75,14 @@
     @media (hover: none) {
       a {
         color: $white;
+        background-image: none;
         &::after {
           content: '';
           background-image: escape-svg($arrow-right-white);
           background-repeat: no-repeat;
           background-position: 90% 0;
-          @include media($until: 'sm') {
-            background-position: 90% -7px;
+          @include media($until: 'lg') {
+            background-position: 90% -8px;
           }
           padding-right: 45px;
         }
