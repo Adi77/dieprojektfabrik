@@ -176,9 +176,6 @@
 .post-type-page {
   > .uagb-slick-carousel {
     overflow: hidden !important;
-    @include media($until: 'sm') {
-      height: 640px !important;
-    }
     @include media($from: 'sm') {
       height: 735px !important;
     }
